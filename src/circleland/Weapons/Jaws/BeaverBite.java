@@ -20,11 +20,13 @@ public class BeaverBite extends BiteWeapon{
         name = "Beaver Jaw";
         bulletSize(60);
         attackMoveSpeed(100);
+        attackSpeed(500);
         weaponType(0);
         attackLife(250);
         weaponColor(Color.GRAY);
         minDamage = 6;
         maxDamage = 9;
         piercing(1);
+        itemLevel(3);
     }
 }

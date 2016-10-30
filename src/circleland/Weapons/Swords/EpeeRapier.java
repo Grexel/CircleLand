@@ -19,11 +19,13 @@ public class EpeeRapier extends RapierWeapon{
         name = "Epée";
         bulletSize(100);
         attackMoveSpeed(200);
+        attackSpeed(500);
         weaponType(0);
         attackLife(500);
         weaponColor(Color.GRAY);
         minDamage = 7;
         maxDamage = 14;
         piercing(1);
+        itemLevel(3);
     }
 }

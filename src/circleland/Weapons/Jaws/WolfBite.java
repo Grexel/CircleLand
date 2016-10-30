@@ -19,11 +19,13 @@ public class WolfBite extends BiteWeapon{
         name = "Wolf Jaw";
         bulletSize(100);
         attackMoveSpeed(200);
+        attackSpeed(500);
         weaponType(0);
         attackLife(500);
         weaponColor(Color.GRAY);
         minDamage = 10;
         maxDamage = 14;
         piercing(1);
+        itemLevel(4);
     }
 }

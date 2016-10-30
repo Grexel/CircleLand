@@ -20,11 +20,13 @@ public class SharkBite extends BiteWeapon{
         name = "Shark Jaw";
         bulletSize(100);
         attackMoveSpeed(200);
+        attackSpeed(500);
         weaponType(0);
         attackLife(500);
         weaponColor(Color.GRAY);
         minDamage = 14;
         maxDamage = 19;
         piercing(1);
+        itemLevel(5);
     }
 }

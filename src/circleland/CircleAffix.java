@@ -5,11 +5,14 @@
  */
 package circleland;
 
+import java.util.Random;
+
 /**
  *
  * @author Jeff
  */
 public abstract class CircleAffix {
+    public static final Random rand = new Random();
     protected double value;
     public double value(){return value;}
     protected double minValue,maxValue;

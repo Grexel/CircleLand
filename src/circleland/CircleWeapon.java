@@ -22,6 +22,7 @@ public class CircleWeapon extends CircleEquipment
     protected int weaponType; // 0 warrior,1 archer,2 mage
     protected double attackMoveSpeed;
     protected int attackLife;
+    protected int attackSpeed;
     protected int piercing;
     protected Color weaponColor;
     protected int bulletSize;
@@ -34,6 +35,7 @@ public class CircleWeapon extends CircleEquipment
         maxDamage = 1;
         weaponType = 0;
         attackMoveSpeed = 200;
+        attackSpeed = 250;
         attackLife = 1000;
         piercing = 1;
         weaponColor = new Color(255,0,0);
@@ -49,6 +51,8 @@ public class CircleWeapon extends CircleEquipment
     public double attackMoveSpeed(){ return attackMoveSpeed;}
     public void attackLife(int m){attackLife = m;}
     public int attackLife(){ return attackLife;}
+    public void attackSpeed(int m){attackSpeed = m;}
+    public int attackSpeed(){ return attackSpeed;}
     public void piercing(int m){piercing = m;}
     public int piercing(){ return piercing;}
     public void weaponColor(Color m){weaponColor = m;}
@@ -86,11 +90,12 @@ public class CircleWeapon extends CircleEquipment
         //get range, precision curves min up towards max
         int min = entity.minDamage();
         int max = entity.maxDamage();
-        return(max-min <= 0)? min: rand.nextInt(max-min) + min;
+        return(max-min <= 0)? min: rand.nextInt(max-min + 1) + min;
     }
     @Override
     public void addBonus(CircleEntity entity) {
        entity.minDamage(entity.minDamage() + minDamage);
        entity.maxDamage(entity.maxDamage() + maxDamage);
+       entity.attackSpeed(entity.attackSpeed() + attackSpeed);
     }
 }

@@ -20,11 +20,13 @@ public class FoilRapier extends RapierWeapon{
         name = "Foil";
         bulletSize(100);
         attackMoveSpeed(200);
+        attackSpeed(500);
         weaponType(0);
         attackLife(500);
         weaponColor(Color.GRAY);
         minDamage = 5;
         maxDamage = 10;
         piercing(1);
+        itemLevel(2);
     }
 }

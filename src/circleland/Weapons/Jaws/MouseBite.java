@@ -20,11 +20,13 @@ public class MouseBite extends BiteWeapon{
         name = "Mouse Jaw";
         bulletSize(40);
         attackMoveSpeed(100);
+        attackSpeed(500);
         weaponType(0);
         attackLife(250);
         weaponColor(Color.GRAY);
         minDamage = 2;
         maxDamage = 4;
         piercing(1);
+        itemLevel(1);
     }
 }

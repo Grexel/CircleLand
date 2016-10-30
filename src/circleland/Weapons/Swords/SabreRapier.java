@@ -20,11 +20,13 @@ public class SabreRapier extends RapierWeapon{
         name = "Sabre";
         bulletSize(100);
         attackMoveSpeed(200);
+        attackSpeed(500);
         weaponType(0);
         attackLife(500);
         weaponColor(Color.GRAY);
         minDamage = 3;
         maxDamage = 7;
         piercing(1);
+        itemLevel(1);
     }
 }

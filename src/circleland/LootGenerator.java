@@ -5,7 +5,7 @@
  */
 package circleland;
 
-import circleland.Affixes.MinDamageAffix;
+import circleland.Affixes.*;
 import circleland.Items.Gold;
 import circleland.Weapons.*;
 import circleland.Weapons.Jaws.*;
@@ -75,6 +75,7 @@ public class LootGenerator {
         if(holder instanceof CircleEquipment){
             double magicalNess = Math.random();
             int numAffix = 0;
+            
             if(magicFind/4 > magicalNess){  // return relic item
                 numAffix = rand.nextInt(4) + 5;
                 ((CircleEquipment) holder).rarity(4);
@@ -91,6 +92,20 @@ public class LootGenerator {
             {
                 this.addAffix((CircleEquipment)holder);
             }
+            //add affixes to magical item name
+            if(holder.rarity == 2){
+                for(int i = 0; i < ((CircleEquipment) holder).affixes().size(); i++){
+                    if(i == 0){
+                        holder.name(((CircleEquipment) holder).affixes().get(i).prefix() 
+                                + " " + holder.name);
+                    }
+                    else if(i == 1){
+                        holder.name(holder.name + " " + ((CircleEquipment) holder).affixes().get(i).suffix());
+                        
+                    }
+                }
+            }
+            //TODO add unique name for rares and relics
         }//end magic items
         
         return holder;
@@ -147,10 +162,13 @@ public class LootGenerator {
         
     }
     public void addAffix(CircleEquipment item){
-        int affixNum = rand.nextInt(1);
+        int affixNum = rand.nextInt(2);
         switch(affixNum){
             case 0 : //add mindamageAffix;
                 item.affixes().add(new MinDamageAffix(item.itemLevel()));
+                break;
+            case 1 : //add mindamageAffix;
+                item.affixes().add(new ArmorAffix(item.itemLevel()));
                 break;
             default:
                 item.affixes().add(new MinDamageAffix(item.itemLevel()));

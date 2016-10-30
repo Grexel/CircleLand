@@ -146,7 +146,7 @@ public class CircleEntity extends CircleObject{
         baseAttackDefense = 5;
         baseMagicDefense = 5;
         basePrecision = 1;
-        baseAttackSpeed = 200;
+        baseAttackSpeed = 0;
         baseCastSpeed = 200;
         baseMoveSpeed = 200;
         baseMagicFind = 0.01;

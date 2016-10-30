@@ -19,11 +19,13 @@ public class BearBite extends BiteWeapon{
         name = "Bear Jaw";
         bulletSize(100);
         attackMoveSpeed(200);
+        attackSpeed(500);
         weaponType(0);
         attackLife(500);
         weaponColor(Color.GRAY);
         minDamage = 18;
         maxDamage = 25;
         piercing(1);
+        itemLevel(6);
     }
 }

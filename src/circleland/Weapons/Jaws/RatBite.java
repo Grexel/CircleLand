@@ -20,11 +20,13 @@ public class RatBite extends BiteWeapon{
         name = "Rat Jaw";
         bulletSize(40);
         attackMoveSpeed(100);
+        attackSpeed(500);
         weaponType(0);
         attackLife(250);
         weaponColor(Color.GRAY);
         minDamage = 4;
         maxDamage = 6;
         piercing(1);
+        itemLevel(2);
     }
 }

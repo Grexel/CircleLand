@@ -19,11 +19,13 @@ public class VerdunRapier extends RapierWeapon{
         name = "Verdun";
         bulletSize(200);
         attackMoveSpeed(500);
+        attackSpeed(500);
         weaponType(0);
         attackLife(750);
         weaponColor(Color.GRAY);
         minDamage = 35;
         maxDamage = 50;
         piercing(1);
+        itemLevel(7);
     }
 }

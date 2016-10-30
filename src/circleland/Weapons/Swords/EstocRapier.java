@@ -20,11 +20,13 @@ public class EstocRapier extends RapierWeapon{
         name = "Estoc";
         bulletSize(100);
         attackMoveSpeed(200);
+        attackSpeed(500);
         weaponType(0);
         attackLife(500);
         weaponColor(Color.GRAY);
         minDamage = 14;
         maxDamage = 25;
         piercing(1);
+        itemLevel(5);
     }
 }

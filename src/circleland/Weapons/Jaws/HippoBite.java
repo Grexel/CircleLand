@@ -19,11 +19,13 @@ public class HippoBite extends BiteWeapon{
         name = "Hippo Jaw";
         bulletSize(100);
         attackMoveSpeed(200);
+        attackSpeed(500);
         weaponType(0);
         attackLife(500);
         weaponColor(Color.GRAY);
         minDamage = 23;
         maxDamage = 29;
         piercing(1);
+        itemLevel(7);
     }
 }

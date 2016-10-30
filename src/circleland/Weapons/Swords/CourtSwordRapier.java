@@ -19,11 +19,13 @@ public class CourtSwordRapier extends RapierWeapon{
         name = "Court Sword";
         bulletSize(40);
         attackMoveSpeed(200);
+        attackSpeed(500);
         weaponType(0);
         attackLife(500);
         weaponColor(Color.GRAY);
         minDamage = 13;
         maxDamage = 20;
         piercing(1);
+        itemLevel(7);
     }
 }

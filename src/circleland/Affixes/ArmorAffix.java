@@ -5,35 +5,32 @@
  */
 package circleland.Affixes;
 
-import static circleland.Affixes.ArmorAffix.maxValue;
-import static circleland.Affixes.ArmorAffix.minValue;
 import circleland.CircleAffix;
-import static circleland.CircleAffix.rand;
 import circleland.CircleEntity;
 
 /**
  *
  * @author Jeff
  */
-public class MinDamageAffix extends CircleAffix{
-    public static final int minValue = 1;
-    public static final int maxValue = 2;
+
+public class ArmorAffix extends CircleAffix{
+    public static final int minValue = 2;
+    public static final int maxValue = 4;
     
-    public MinDamageAffix(int level){
-        prefix = "Precise";
-        suffix = "of Exacting";
-        value = level;
+    public ArmorAffix(int level){
+        prefix = "Tough";
+        suffix = "of Protection";
         value = rand.nextInt(level*maxValue - level*minValue) + level*minValue;
     }
     
     @Override
     public void addBonus(CircleEntity entity) {
-      entity.minDamage(entity.minDamage() + (int)value);
+      entity.attackDefense(entity.attackDefense()+ (int)value);
     }
 
     @Override
     public String getDetails() {
-        return "Minimum Damage +" + value;
+        return "Armor Bonus +" + value;
     }
     
 }
