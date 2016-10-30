@@ -197,8 +197,9 @@ public class CircleEntity extends CircleObject{
         
         //Set Heading
         double deltaY = aim.y - position.y;
-        double deltaX = aim.x - position.x;  
-        heading = Math.atan2(deltaY, deltaX);
+        double deltaX = aim.x - position.x;
+        //LookupAtan2 needs to be initialized in main, circleland. 
+        heading = LookupAtan2.atan2((float)deltaY,(float) deltaX);
         
         //Attack if able
         if(!attackDisabled && doAttack && attackTimer <= 0  && castTimer <= 0 && health > 0 && equippedWeapon != null)

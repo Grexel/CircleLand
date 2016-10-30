@@ -118,6 +118,11 @@ public class CircleLand extends DrawingPanel implements MouseListener, MouseMoti
         SoundManager.initializeSoundManager();
         MapLoader mL = new MapLoader();
         //mL.loadMap("images/Act1MapData.xml");
+        
+        //initialize Lookup atan2 table
+        //Math.atan2 takes a boatload of cpu, let's try a lookup table to speed it up
+        LookupAtan2.initialize();
+        
         frames = 0;
         ms = 1;
         msToDraw = 15;
