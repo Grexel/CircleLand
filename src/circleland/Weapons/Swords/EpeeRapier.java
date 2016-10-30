@@ -22,18 +22,8 @@ public class EpeeRapier extends RapierWeapon{
         weaponType(0);
         attackLife(500);
         weaponColor(Color.GRAY);
-        healthBonus(0);
-        manaBonus(0);
-        healthRegenBonus(0);
-        manaRegenBonus(0);
-        attackDamageBonus(30);
-        magicDamageBonus(0);
-        attackDefenseBonus(0);
-        magicDefenseBonus(0);
-        precisionBonus(0);
-        attackSpeedBonus(0);
-        castSpeedBonus(0);
-        moveSpeedBonus(0);
+        minDamage = 7;
+        maxDamage = 14;
         piercing(1);
     }
 }

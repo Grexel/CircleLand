@@ -20,18 +20,6 @@ public class BombWeapon extends CircleWeapon{
     public static final int BASE_BLOWUP_DELAY = 750;
     public static final int BASE_ATTACK_MOVESPEED = 150;
     public static final int BASE_ATTACK_LIFE = 500;
-    public static final int BASE_HEALTH_BONUS = 100;
-    public static final int BASE_MANA_BONUS = 100;
-    public static final int BASE_HEALTHREGEN_BONUS = 1;
-    public static final int BASE_MANAREGEN_BONUS = 1;
-    public static final int BASE_ATTACKDAMAGE_BONUS = 20;
-    public static final int BASE_MAGICDAMAGE_BONUS = 0;
-    public static final int BASE_ATTACKDEFENSE_BONUS = 2;
-    public static final int BASE_MAGICDEFENSE_BONUS = 0;
-    public static final int BASE_PRECISION_BONUS = 1;
-    public static final int BASE_ATTACKSPEED_BONUS = 750;
-    public static final int BASE_CASTSPEED_BONUS = 750;
-    public static final int BASE_MOVESPEED_BONUS = 20;
     public static final int BASE_BULLET_SIZE = 10;
     public static final int BASE_PIERCING = 1;
     
@@ -49,7 +37,8 @@ public class BombWeapon extends CircleWeapon{
         super.attack(owner,attacks);
         double velX = attackMoveSpeed * Math.cos(owner.heading());
         double velY = attackMoveSpeed * Math.sin(owner.heading());
-        BombAttack bA = new BombAttack(owner,attackLife,owner.attackDamage(),
+        int dmg = randomizeDamage(owner);
+        BombAttack bA = new BombAttack(owner,attackLife,dmg,
                 piercing,owner.position().x,owner.position().y,velX,velY,blowUpDelay,bulletSize,weaponColor);
         attacks.add(bA);
     }

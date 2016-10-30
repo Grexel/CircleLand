@@ -3,27 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package circleland.Weapons.Swords;
+package circleland.Weapons.Jaws;
 
-import circleland.Weapons.RapierWeapon;
+import circleland.Weapons.BiteWeapon;
 import java.awt.Color;
 
 /**
  *
  * @author Jeff
  */
-public class CourtSwordRapier extends RapierWeapon{
+public class BearBite extends BiteWeapon{
     
-    public CourtSwordRapier(){
+    public BearBite(){
         super();
-        name = "Court Sword";
-        bulletSize(40);
+        name = "Bear Jaw";
+        bulletSize(100);
         attackMoveSpeed(200);
         weaponType(0);
         attackLife(500);
         weaponColor(Color.GRAY);
-        minDamage = 13;
-        maxDamage = 20;
+        minDamage = 18;
+        maxDamage = 25;
         piercing(1);
     }
 }

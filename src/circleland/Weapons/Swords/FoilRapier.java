@@ -23,18 +23,8 @@ public class FoilRapier extends RapierWeapon{
         weaponType(0);
         attackLife(500);
         weaponColor(Color.GRAY);
-        healthBonus(0);
-        manaBonus(0);
-        healthRegenBonus(0);
-        manaRegenBonus(0);
-        attackDamageBonus(20);
-        magicDamageBonus(0);
-        attackDefenseBonus(0);
-        magicDefenseBonus(0);
-        precisionBonus(0);
-        attackSpeedBonus(0);
-        castSpeedBonus(0);
-        moveSpeedBonus(0);
+        minDamage = 5;
+        maxDamage = 10;
         piercing(1);
     }
 }

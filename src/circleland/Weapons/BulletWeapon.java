@@ -20,18 +20,6 @@ public class BulletWeapon extends CircleWeapon {
     public static final Color CENTER_COLOR = Color.GRAY; //item type color
     public static final int BASE_ATTACK_MOVESPEED = 180;
     public static final int BASE_ATTACK_LIFE = 1000;
-    public static final int BASE_HEALTH_BONUS = 100;
-    public static final int BASE_MANA_BONUS = 100;
-    public static final int BASE_HEALTHREGEN_BONUS = 1;
-    public static final int BASE_MANAREGEN_BONUS = 1;
-    public static final int BASE_ATTACKDAMAGE_BONUS = 5;
-    public static final int BASE_MAGICDAMAGE_BONUS = 0;
-    public static final int BASE_ATTACKDEFENSE_BONUS = 2;
-    public static final int BASE_MAGICDEFENSE_BONUS = 0;
-    public static final int BASE_PRECISION_BONUS = 1;
-    public static final int BASE_ATTACKSPEED_BONUS = 100;
-    public static final int BASE_CASTSPEED_BONUS = 0;
-    public static final int BASE_MOVESPEED_BONUS = 20;
     public static final int BASE_BULLET_SIZE = 10;
     public static final int BASE_PIERCING = 1;
     
@@ -45,7 +33,8 @@ public class BulletWeapon extends CircleWeapon {
         super.attack(owner,attacks);
         double velX = attackMoveSpeed * Math.cos(owner.heading());
         double velY = attackMoveSpeed * Math.sin(owner.heading());
-        BulletAttack bA = new BulletAttack(owner,attackLife,owner.attackDamage(),
+        int dmg = randomizeDamage(owner);
+        BulletAttack bA = new BulletAttack(owner,attackLife,dmg,
                 piercing,owner.position().x,owner.position().y,velX,velY,bulletSize,weaponColor);
         
         attacks.add(bA);
