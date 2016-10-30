@@ -55,9 +55,7 @@ public class MonsterGenerator {
         monster.baseCastSpeed = RedImpMonster.BASE_CASTSPEED + level*1;
         monster.baseMoveSpeed = RedImpMonster.BASE_MOVESPEED + level*1;
         
-        CircleWeapon cW = weaponGenerator.generateBulletWeapon(level, 0);
-        if(unique)
-            weaponGenerator.addWeaponBonus(cW);
+        CircleWeapon cW = weaponGenerator.getBiteWeapon(level);
         monster.equippedWeapon(cW);
         //System.out.println("Imp level:" + monster.level);
         return monster;
@@ -90,10 +88,8 @@ public class MonsterGenerator {
         monster.baseCastSpeed = HoundMonster.BASE_CASTSPEED + level*1;
         monster.baseMoveSpeed = HoundMonster.BASE_MOVESPEED + level*1;
         
-        CircleWeapon cW = weaponGenerator.generateBiteWeapon(level, 0);
+        CircleWeapon cW = weaponGenerator.getBiteWeapon(level);
         cW.bulletSize(30);
-        if(unique)
-            weaponGenerator.addWeaponBonus(cW);
         monster.equippedWeapon(cW);
         //System.out.println("Hound level:" + monster.level);
         return monster;
@@ -126,9 +122,7 @@ public class MonsterGenerator {
         monster.baseCastSpeed = FlyMonster.BASE_CASTSPEED + level*1;
         monster.baseMoveSpeed = FlyMonster.BASE_MOVESPEED + level*1;
         
-        CircleWeapon cW = weaponGenerator.generateBulletWeapon(level, 0);
-        if(unique)
-            weaponGenerator.addWeaponBonus(cW);
+        CircleWeapon cW = weaponGenerator.getBiteWeapon(level);
         monster.equippedWeapon(cW);
         //System.out.println("Fly level:" + monster.level);
         return monster;
@@ -161,10 +155,8 @@ public class MonsterGenerator {
         monster.baseCastSpeed = InchWormMonster.BASE_CASTSPEED + level*1;
         monster.baseMoveSpeed = InchWormMonster.BASE_MOVESPEED + level*1;
         
-        CircleWeapon cW = weaponGenerator.generateRapierWeapon(level, 0);
+        CircleWeapon cW = weaponGenerator.getBiteWeapon(level);
         cW.bulletSize(30);
-        if(unique)
-            weaponGenerator.addWeaponBonus(cW);
         monster.equippedWeapon(cW);
        // System.out.println("InchWorm level:" + monster.level);
         return monster;
@@ -197,9 +189,7 @@ public class MonsterGenerator {
         monster.baseCastSpeed = SkeletonRangerMonster.BASE_CASTSPEED + level*1;
         monster.baseMoveSpeed = SkeletonRangerMonster.BASE_MOVESPEED + level*1;
         
-        CircleWeapon cW = weaponGenerator.generateBulletWeapon(level, 0);
-        if(unique)
-            weaponGenerator.addWeaponBonus(cW);
+        CircleWeapon cW = weaponGenerator.getBiteWeapon(level);
         monster.equippedWeapon(cW);
         //System.out.println("SkeletonRanger level:" + monster.level);
         return monster;
@@ -232,9 +222,7 @@ public class MonsterGenerator {
         monster.baseCastSpeed = SkeletonSwordMonster.BASE_CASTSPEED + level*1;
         monster.baseMoveSpeed = SkeletonSwordMonster.BASE_MOVESPEED + level*1;
         
-        CircleWeapon cW = weaponGenerator.generateRapierWeapon(level, 0);
-        if(unique)
-            weaponGenerator.addWeaponBonus(cW);
+        CircleWeapon cW = weaponGenerator.getBiteWeapon(level);
         monster.equippedWeapon(cW);
         //System.out.println("SkeletonSword level:" + monster.level);
         return monster;
@@ -269,9 +257,7 @@ public class MonsterGenerator {
         monster.baseCastSpeed = TurretMonster.BASE_CASTSPEED + level*1;
         monster.baseMoveSpeed = TurretMonster.BASE_MOVESPEED + level*1;
         
-        CircleWeapon cW = weaponGenerator.generateBulletWeapon(level, 0);
-        if(unique)
-            weaponGenerator.addWeaponBonus(cW);
+        CircleWeapon cW = weaponGenerator.getBiteWeapon(level);
         monster.equippedWeapon(cW);
         //System.out.println("Turret level:" + monster.level);
         return monster;
@@ -306,9 +292,7 @@ public class MonsterGenerator {
         monster.baseCastSpeed = CadaverMonster.BASE_CASTSPEED + level*1;
         monster.baseMoveSpeed = CadaverMonster.BASE_MOVESPEED + level*1;
         
-        CircleWeapon cW = weaponGenerator.generateBulletWeapon(level, 0);
-        if(unique)
-            weaponGenerator.addWeaponBonus(cW);
+        CircleWeapon cW = weaponGenerator.getBiteWeapon(level);
         monster.equippedWeapon(cW);
         //System.out.println("Cadaver level:" + monster.level);
         return monster;
@@ -343,9 +327,7 @@ public class MonsterGenerator {
         monster.baseCastSpeed = RedImpSpawner.BASE_CASTSPEED + level*1;
         monster.baseMoveSpeed = RedImpSpawner.BASE_MOVESPEED + level*1;
         
-        CircleWeapon cW = weaponGenerator.generateBulletWeapon(level, 0);
-        if(unique)
-            weaponGenerator.addWeaponBonus(cW);
+        CircleWeapon cW = weaponGenerator.getBiteWeapon(level);
         monster.equippedWeapon(cW);
         monster.recalculateBonuses(0);
         monster.health(monster.maxHealth());

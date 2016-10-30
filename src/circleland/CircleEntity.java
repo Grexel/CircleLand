@@ -6,6 +6,7 @@
 package circleland;
 
 import circleland.Display.DamageDisplayObject;
+import circleland.Equipment.*;
 import circleland.Items.Gold;
 import circleland.Items.Portal;
 import circleland.Weapons.*;
@@ -35,23 +36,35 @@ public class CircleEntity extends CircleObject{
     
     //Inventory and skills
     protected CircleWeapon equippedWeapon;
+    protected CircleArmor equippedArmor;
+    protected CircleHelmet equippedHelmet;
+    protected CircleGloves equippedGloves;
+    protected CircleBoots equippedBoots;
+    protected CircleRing equippedRing1;
+    protected CircleRing equippedRing2;
+    protected CircleAmulet equippedAmulet;
     protected CircleSkill equippedSkill;
+    
     protected ArrayList<CircleItem> inventory;
     public ArrayList<CircleItem> inventory(){return inventory;}
     protected ArrayList<CircleSkill> skills;
     public ArrayList<CircleSkill> skills(){return skills;}
     protected int skillPoints;
+    protected int statPoints;
     
     protected CircleEntity focusedEntity;
     public void focusedEntity(CircleEntity m){focusedEntity = m;}
     public CircleEntity focusedEntity(){return focusedEntity;}
     
     //Stats
+    protected int strength, dexterity, magic, fortitude;
+    protected int minDamage, maxDamage;
     protected double maxHealth, health,healthRegeneration,maxMana,mana,manaRegeneration,
             attackSpeed,castSpeed,moveSpeed;
     protected int level, experience,experienceToNextLevel,
             attackDamage,magicDamage,attackDefense,magicDefense,
             precision;
+    protected int baseMinDamage, baseMaxDamage;
     protected double baseMaxHealth,baseHealthRegeneration,baseMaxMana,baseManaRegeneration,
             baseMoveSpeed,baseAttackSpeed,baseCastSpeed;
     protected int baseAttackDamage,baseMagicDamage,baseAttackDefense,baseMagicDefense,
@@ -82,6 +95,12 @@ public class CircleEntity extends CircleObject{
         inventory = new ArrayList<>();
         effects = new ArrayList<>();
         skills = new ArrayList<>();
+        statPoints = 0;
+        skillPoints = 0;
+        strength = 1;
+        dexterity = 1;
+        magic = 1;
+        fortitude = 1;
         
         moveLeft = false;
         moveRight = false;
@@ -115,6 +134,8 @@ public class CircleEntity extends CircleObject{
         castSpeed = 200;
         moveSpeed = 200;
         magicFind = 0.01;
+        minDamage = 1;
+        maxDamage = 1;
         
         baseMaxHealth = 100;
         baseHealthRegeneration = 10;
@@ -129,18 +150,18 @@ public class CircleEntity extends CircleObject{
         baseCastSpeed = 200;
         baseMoveSpeed = 200;
         baseMagicFind = 0.01;
+        baseMinDamage = 1;
+        baseMaxDamage = 1;
         
         gold = 0;
         
         attackTimer = 0;
         castTimer = 0;
-        
-        //remove these in final version
-        equippedWeapon = new BounceWeapon();
     }
     
     public void update(long deltaTime, CircleMap world) {
-        recalculateBonuses(deltaTime);
+        //this may need to be evented out instead of running every frame
+        recalculateBonuses(deltaTime); 
         if(focusedEntity != null && focusedEntity.health() <= 0){
             focusedEntity = null;
         }
@@ -219,45 +240,58 @@ public class CircleEntity extends CircleObject{
         
     }
     public void recalculateBonuses(long deltaTime){
-        //add basestats and equippedstats and effects <- to come later
-        //add equipment stats
         attackDisabled = false;
         castDisabled = false;
         moveDisabled = false;
         isFeared = false;
         isThorned = false;
-        if(equippedWeapon != null){
-            maxHealth = baseMaxHealth + equippedWeapon.healthBonus();
-            healthRegeneration = baseHealthRegeneration + equippedWeapon.healthRegenBonus();
-            maxMana = baseMaxMana + equippedWeapon.manaBonus();
-            manaRegeneration = baseManaRegeneration + equippedWeapon.manaRegenBonus();
-            attackDamage = baseAttackDamage + equippedWeapon.attackDamageBonus();
-            magicDamage = baseMagicDamage + equippedWeapon.magicDamageBonus();
-            attackDefense = baseAttackDefense + equippedWeapon.attackDefenseBonus();
-            magicDefense = baseMagicDefense + equippedWeapon.magicDefenseBonus();
-            precision = basePrecision + equippedWeapon.precisionBonus();
-            attackSpeed = baseAttackSpeed + equippedWeapon.attackSpeedBonus();
-            castSpeed = baseCastSpeed + equippedWeapon.castSpeedBonus();
-            moveSpeed = baseMoveSpeed + equippedWeapon.moveSpeedBonus();
-            magicFind = baseMagicFind;
-        }
-        else{
-            maxHealth = baseMaxHealth;
-            healthRegeneration = baseHealthRegeneration;
-            maxMana = baseMaxMana;
-            manaRegeneration = baseManaRegeneration;
-            attackDamage = baseAttackDamage;
-            magicDamage = baseMagicDamage;
-            attackDefense = baseAttackDefense;
-            magicDefense = baseMagicDefense;
-            precision = basePrecision;
-            attackSpeed = baseAttackSpeed;
-            castSpeed = baseCastSpeed;
-            moveSpeed = baseMoveSpeed;
-            magicFind = baseMagicFind;
-        }
-        //add effects stats;
-        //update player attacks
+        
+        //start with base stats
+        maxHealth = baseMaxHealth;
+        healthRegeneration = baseHealthRegeneration;
+        maxMana = baseMaxMana;
+        manaRegeneration = baseManaRegeneration;
+        attackDamage = baseAttackDamage;
+        magicDamage = baseMagicDamage;
+        attackDefense = baseAttackDefense;
+        magicDefense = baseMagicDefense;
+        precision = basePrecision;
+        attackSpeed = baseAttackSpeed;
+        castSpeed = baseCastSpeed;
+        moveSpeed = baseMoveSpeed;
+        magicFind = baseMagicFind;
+        minDamage = baseMinDamage;
+        maxDamage = baseMaxDamage;
+        
+        //add item stats;
+        if(equippedWeapon != null)equippedWeapon.addBonus(this);
+        if(equippedArmor != null)equippedArmor.addBonus(this);
+        if(equippedHelmet != null)equippedHelmet.addBonus(this);
+        if(equippedGloves != null)equippedGloves.addBonus(this);
+        if(equippedBoots != null)equippedBoots.addBonus(this);
+        if(equippedRing1 != null)equippedRing1.addBonus(this);
+        if(equippedRing2 != null)equippedRing2.addBonus(this);
+        if(equippedAmulet != null)equippedAmulet.addBonus(this);
+        
+        //add item affixes;
+        if(equippedWeapon != null)
+        for(CircleAffix affix : equippedWeapon.affixes()){affix.addBonus(this);}
+        if(equippedArmor != null)
+        for(CircleAffix affix : equippedArmor.affixes()){affix.addBonus(this);}
+        if(equippedHelmet != null)
+        for(CircleAffix affix : equippedHelmet.affixes()){affix.addBonus(this);}
+        if(equippedGloves != null)
+        for(CircleAffix affix : equippedGloves.affixes()){affix.addBonus(this);}
+        if(equippedBoots != null)
+        for(CircleAffix affix : equippedBoots.affixes()){affix.addBonus(this);}
+        if(equippedRing1 != null)
+        for(CircleAffix affix : equippedRing1.affixes()){affix.addBonus(this);}
+        if(equippedRing2 != null)
+        for(CircleAffix affix : equippedRing2.affixes()){affix.addBonus(this);}
+        if(equippedAmulet != null)
+        for(CircleAffix affix : equippedAmulet.affixes()){affix.addBonus(this);}
+        
+        //add effects stats, remove if expired;
         for (Iterator<CircleEffect> iterator = effects.iterator(); iterator.hasNext();) {
             CircleEffect effect = iterator.next();
             effect.update(deltaTime, this);
@@ -265,11 +299,11 @@ public class CircleEntity extends CircleObject{
                 iterator.remove();
             }
         }
+        //add passive bonuses from skills
         for(CircleSkill skill : skills){
             if(!skill.isActive())
             {
                 ((CirclePassiveSkill)skill).addBonus(this);
-                //add passive skill bonus
             }
         }
     }
@@ -445,6 +479,11 @@ public class CircleEntity extends CircleObject{
             }
         }
     }
+    
+    
+    //GETTER AND SETTER METHODS
+    
+    //ACTION VARIABLES
     public void aim(Point2D.Double point){aim = point;}
     public Point2D.Double aim(){ return aim;}
     public void moveLeft(boolean m){moveLeft = m;}
@@ -486,11 +525,28 @@ public class CircleEntity extends CircleObject{
     public void experienceToNextLevel(int m){experienceToNextLevel = m;}
     public int experienceToNextLevel(){ return experienceToNextLevel;}
     
+    //EQUIPMENT
     public void equippedWeapon(CircleWeapon m){equippedWeapon = m;}
     public CircleWeapon equippedWeapon(){ return equippedWeapon;}
+    public void equippedArmor(CircleArmor m){equippedArmor = m;}
+    public CircleArmor equippedArmor(){ return equippedArmor;}
+    public void equippedHelmet(CircleHelmet m){equippedHelmet = m;}
+    public CircleHelmet equippedHelmet(){ return equippedHelmet;}
+    public void equippedGloves(CircleGloves m){equippedGloves = m;}
+    public CircleGloves equippedGloves(){ return equippedGloves;}
+    public void equippedBoots(CircleBoots m){equippedBoots = m;}
+    public CircleBoots equippedBoots(){ return equippedBoots;}
+    public void equippedRing1(CircleRing m){equippedRing1 = m;}
+    public CircleRing equippedRing1(){ return equippedRing1;}
+    public void equippedRing2(CircleRing m){equippedRing2 = m;}
+    public CircleRing equippedRing2(){ return equippedRing2;}
+    public void equippedAmulet(CircleAmulet m){equippedAmulet = m;}
+    public CircleAmulet equippedAmulet(){ return equippedAmulet;}
+    
     public void equippedSkill(CircleSkill m){equippedSkill = m;}
     public CircleSkill equippedSkill(){ return equippedSkill;}
     
+    //AUGMENTED STATS
     public void heal(double h){health+=h;}
     public void maxHealth(double m){maxHealth = m;}
     public double maxHealth(){ return maxHealth;}
@@ -523,6 +579,12 @@ public class CircleEntity extends CircleObject{
     public void magicFind(double m){magicFind = m;}
     public double magicFind(){ return magicFind;}
     
+    public void minDamage(int m){minDamage = m;}
+    public int minDamage(){ return minDamage;}
+    public void maxDamage(int m){maxDamage = m;}
+    public int maxDamage(){ return maxDamage;}
+    
+    //BASE STATS
     public void baseMaxHealth(double m){baseMaxHealth = m;}
     public double baseMaxHealth(){ return baseMaxHealth;}
     public void baseHealthRegeneration(double m){healthRegeneration = m;}
@@ -549,6 +611,13 @@ public class CircleEntity extends CircleObject{
     public double baseMoveSpeed(){ return moveSpeed;}
     public void baseMagicFind(double m){magicFind = m;}
     public double baseMagicFind(){ return magicFind;}
+    
+    public void baseMinDamage(int m){baseMinDamage = m;}
+    public int baseMinDamage(){ return baseMinDamage;}
+    public void baseMaxDamage(int m){baseMaxDamage = m;}
+    public int baseMaxDamage(){ return baseMaxDamage;}
+    
+    //GOLD :}
     public void gold(int m){gold = m;}
     public int gold(){ return gold;}
 }

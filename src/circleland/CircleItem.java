@@ -15,7 +15,12 @@ import java.awt.geom.Point2D;
 abstract public class CircleItem extends CircleObject{
     protected int rarity;
     public int rarity(){return rarity;}
-    public void rarity(int s){rarity = s;}
+    public void rarity(int s){
+        rarity = s;
+        if(rarity == 1) rarityColor = Color.WHITE;
+        if(rarity == 2) rarityColor = Color.GREEN;
+        if(rarity == 3) rarityColor = Color.BLUE;
+        if(rarity == 4) rarityColor = Color.MAGENTA;}
     protected Color rarityColor;
     public Color rarityColor(){return rarityColor;}
     public void rarityColor(Color s){rarityColor = s;}
