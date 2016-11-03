@@ -64,6 +64,8 @@ public class CircleEntity extends CircleObject{
     protected int level, experience,experienceToNextLevel,
             attackDamage,magicDamage,attackDefense,magicDefense,
             precision;
+    
+    protected int baseStrength, baseDexterity, baseMagic, baseFortitude;
     protected int baseMinDamage, baseMaxDamage;
     protected double baseMaxHealth,baseHealthRegeneration,baseMaxMana,baseManaRegeneration,
             baseMoveSpeed,baseAttackSpeed,baseCastSpeed;
@@ -101,6 +103,10 @@ public class CircleEntity extends CircleObject{
         dexterity = 1;
         magic = 1;
         fortitude = 1;
+        baseStrength = 1;
+        baseDexterity = 1;
+        baseMagic = 1;
+        baseFortitude = 1;
         
         moveLeft = false;
         moveRight = false;
@@ -221,6 +227,7 @@ public class CircleEntity extends CircleObject{
     public void levelUp(){
         level++;
         skillPoints++;
+        statPoints += 5;
         baseMaxHealth += 10;
         health = maxHealth;
         baseHealthRegeneration += 1;
@@ -261,6 +268,10 @@ public class CircleEntity extends CircleObject{
         magicFind = baseMagicFind;
         minDamage = baseMinDamage;
         maxDamage = baseMaxDamage;
+        strength = baseStrength;
+        dexterity = baseDexterity;
+        magic = baseMagic;
+        fortitude = baseFortitude;
         
         //add item stats;
         if(equippedWeapon != null)equippedWeapon.addBonus(this);
@@ -305,6 +316,28 @@ public class CircleEntity extends CircleObject{
                 ((CirclePassiveSkill)skill).addBonus(this);
             }
         }
+        //stats should be fully calculated, add stat bonuses to character
+        minDamage += strength/5;
+        maxDamage += strength;
+        precision += strength/5;
+        
+        precision += dexterity;
+        minDamage += dexterity/5;
+        maxDamage += dexterity/5;
+        
+        maxMana += magic * 2;
+        manaRegeneration += magic * 0.2;
+        magicDefense += magic * 2;
+        
+        maxHealth += fortitude * 4;
+        healthRegeneration += fortitude * 0.2;
+        attackDefense += fortitude * 2;
+        
+        //precision needs to curve min damage up
+        int range = maxDamage - minDamage;
+        int plusMin = (int)(range * (precision/100.0));
+        if(plusMin > range) plusMin = range;
+        minDamage += plusMin;
     }
     public void draw(Graphics2D graphics)
     {
@@ -522,6 +555,8 @@ public class CircleEntity extends CircleObject{
     }
     public void skillPoints(int m){skillPoints = m;}
     public int skillPoints(){ return skillPoints;}
+    public void statPoints(int m){statPoints = m;}
+    public int statPoints(){ return statPoints;}
     public void experience(int m){experience = m;}
     public int experience(){ return experience;}
     public void experienceToNextLevel(int m){experienceToNextLevel = m;}
@@ -585,6 +620,23 @@ public class CircleEntity extends CircleObject{
     public int minDamage(){ return minDamage;}
     public void maxDamage(int m){maxDamage = m;}
     public int maxDamage(){ return maxDamage;}
+    
+    public void strength(int m){strength = m;}
+    public int strength(){ return strength;}
+    public void dexterity(int m){dexterity = m;}
+    public int dexterity(){ return dexterity;}
+    public void magic(int m){magic = m;}
+    public int magic(){ return magic;}
+    public void fortitude(int m){fortitude = m;}
+    public int fortitude(){ return fortitude;}
+    public void baseStrength(int m){baseStrength = m;}
+    public int baseStrength(){ return baseStrength;}
+    public void baseDexterity(int m){baseDexterity = m;}
+    public int baseDexterity(){ return baseDexterity;}
+    public void baseMagic(int m){baseMagic = m;}
+    public int baseMagic(){ return baseMagic;}
+    public void baseFortitude(int m){baseFortitude = m;}
+    public int baseFortitude(){ return baseFortitude;}
     
     //BASE STATS
     public void baseMaxHealth(double m){baseMaxHealth = m;}

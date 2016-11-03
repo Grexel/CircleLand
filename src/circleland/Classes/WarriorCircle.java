@@ -29,6 +29,11 @@ import java.util.ArrayList;
 public class WarriorCircle extends CircleClass{
     public WarriorCircle(){
         super();
+        baseStrength = 30;
+        baseDexterity = 20;
+        baseMagic = 10;
+        baseFortitude = 20;
+        statPoints = 100;
         color = Color.GRAY;
         addAllSkills();
         equippedSkill = new StunSkill();

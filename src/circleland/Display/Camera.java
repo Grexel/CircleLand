@@ -103,6 +103,11 @@ public class Camera extends RectangleObject{
                 marketScreen.click(mouse);
                 mouse.mouseLeftClicked(false);
             }
+            else if(showCharacterStats && characterStats.rect().contains(mouse.position())){
+                characterStats.click(mouse);
+                mouse.mouseLeftClicked(false);
+                
+            }
             else if(showInventory && inventory.rect().contains(mouse.position())){
                 inventory.click(mouse);
                 mouse.mouseLeftClicked(false);
