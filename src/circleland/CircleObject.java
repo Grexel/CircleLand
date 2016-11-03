@@ -56,7 +56,7 @@ public class CircleObject {
         return false;
     }
         
-    public double distanceBetweenPoints(Point2D.Double p1, Point2D.Double p2)
+    public static double distanceBetweenPoints(Point2D.Double p1, Point2D.Double p2)
     {
         return Math.sqrt(Math.pow(p2.x - p1.x,2)+ Math.pow(p2.y - p1.y,2));
     }

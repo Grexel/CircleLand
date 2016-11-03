@@ -38,7 +38,7 @@ public class SwordWeapon extends CircleWeapon{
         double velX = attackMoveSpeed * Math.cos(owner.heading());
         double velY = attackMoveSpeed * Math.sin(owner.heading());
         int dmg = randomizeDamage(owner);
-        SwordAttack bA = new SwordAttack(owner,(int)owner.attackSpeed(),dmg,
+        SwordAttack bA = new SwordAttack(owner,attackLife,dmg,
                 piercing,owner.position().x,owner.position().y,velX,velY,bulletSize,weaponColor);
         
         attacks.add(bA);

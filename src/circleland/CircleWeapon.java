@@ -96,6 +96,6 @@ public class CircleWeapon extends CircleEquipment
     public void addBonus(CircleEntity entity) {
        entity.minDamage(entity.minDamage() + minDamage);
        entity.maxDamage(entity.maxDamage() + maxDamage);
-       entity.attackSpeed(entity.attackSpeed() + attackSpeed);
+       
     }
 }

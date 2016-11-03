@@ -36,7 +36,7 @@ public class NovaWeapon extends CircleWeapon{
         double velX = attackMoveSpeed * Math.cos(owner.heading());
         double velY = attackMoveSpeed * Math.sin(owner.heading());
         int dmg = randomizeDamage(owner);
-        NovaAttack bA = new NovaAttack(owner,(int)owner.attackSpeed(),dmg,
+        NovaAttack bA = new NovaAttack(owner,attackLife,dmg,
                 piercing,owner.position().x,owner.position().y,velX,velY,bulletSize,weaponColor);
         
         attacks.add(bA);

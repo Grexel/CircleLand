@@ -34,7 +34,7 @@ public class BoneWallSkill extends CircleSkill{
         double startingHeading = owner.heading();//center - max arc = Math.PI
         double velX = owner.moveSpeed() * 2 * Math.cos(owner.heading());
         double velY = owner.moveSpeed() * 2 * Math.sin(owner.heading());
-        BoneWallSkillAttack bA = new BoneWallSkillAttack(owner,(int)owner.castSpeed(),skillLevel,
+        BoneWallSkillAttack bA = new BoneWallSkillAttack(owner,castLife,skillLevel,
             owner.position().x,owner.position().y,velX,velY,8,Color.GRAY);
         
         attacks.add(bA);

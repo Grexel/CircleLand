@@ -38,7 +38,7 @@ public class BoneBlastSkill extends CircleSkill{
         {
             double velX = owner.moveSpeed() * 2 * Math.cos(startingHeading + headingGap*i);
             double velY = owner.moveSpeed() * 2 * Math.sin(startingHeading + headingGap*i);
-            BoneBlastSkillAttack bA = new BoneBlastSkillAttack(owner,(int)owner.castSpeed(),owner.magicDamage(),1,
+            BoneBlastSkillAttack bA = new BoneBlastSkillAttack(owner,castLife,owner.magicDamage(),1,
             owner.position().x,owner.position().y,velX,velY,8,Color.GRAY);
             attacks.add(bA);
         }

@@ -32,7 +32,7 @@ public class TauntSkill extends CircleSkill {
         owner.mana(owner.mana() - manaCost);
         double velX = owner.moveSpeed() * 2 * Math.cos(owner.heading());
         double velY = owner.moveSpeed() * 2 * Math.sin(owner.heading());
-        TauntSkillAttack bA = new TauntSkillAttack(owner,(int)owner.castSpeed(),owner.magicDamage(),
+        TauntSkillAttack bA = new TauntSkillAttack(owner,castLife,owner.magicDamage(),
             owner.position().x,owner.position().y,velX,velY,tauntSize,Color.PINK);
         attacks.add(bA);
     }

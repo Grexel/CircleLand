@@ -37,7 +37,7 @@ public class BiteWeapon extends CircleWeapon{
         double velX = attackMoveSpeed * Math.cos(owner.heading());
         double velY = attackMoveSpeed * Math.sin(owner.heading());
         int dmg = randomizeDamage(owner);
-        BiteAttack bA = new BiteAttack(owner,(int)owner.attackSpeed(),dmg,
+        BiteAttack bA = new BiteAttack(owner,attackLife,dmg,
                 piercing,owner.position().x,owner.position().y,velX,velY,bulletSize,weaponColor);
         
         attacks.add(bA);

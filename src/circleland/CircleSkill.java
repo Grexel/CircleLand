@@ -24,10 +24,18 @@ public class CircleSkill extends CircleItem{
     protected boolean isActive;
     public boolean isActive(){return isActive;}
     public void isActive(boolean m){isActive = m;}
+    protected double castSpeed;
+    public void castSpeed(double m){castSpeed = m;}
+    public double castSpeed(){ return castSpeed;}
+    protected int castLife;
+    public void castLife(int m){castLife = m;}
+    public int castLife(){ return castLife;}
     
     public CircleSkill(){
         manaCost = 15;
         skillLevel = 0;
+        castSpeed = 500;
+        castLife = 500;
         isActive = true;
     }
     public void attack(CircleEntity owner, ArrayList<CircleAttack> attackList){

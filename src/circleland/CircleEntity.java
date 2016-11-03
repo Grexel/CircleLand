@@ -82,7 +82,7 @@ public class CircleEntity extends CircleObject{
     {
         //initialize properties
         name = "Entity";
-        viewRadius = 100;
+        viewRadius = 200;
         position = new Point2D.Double(0,0);
         velocity = new Point2D.Double(0,0);
         aim = new Point2D.Double(0,0);
@@ -130,8 +130,8 @@ public class CircleEntity extends CircleObject{
         attackDefense = 5;
         magicDefense = 5;
         precision = 1;
-        attackSpeed = 200;
-        castSpeed = 200;
+        attackSpeed = 0;
+        castSpeed = 0;
         moveSpeed = 200;
         magicFind = 0.01;
         minDamage = 1;
@@ -147,7 +147,7 @@ public class CircleEntity extends CircleObject{
         baseMagicDefense = 5;
         basePrecision = 1;
         baseAttackSpeed = 0;
-        baseCastSpeed = 200;
+        baseCastSpeed = 0;
         baseMoveSpeed = 200;
         baseMagicFind = 0.01;
         baseMinDamage = 1;
@@ -234,8 +234,6 @@ public class CircleEntity extends CircleObject{
         baseAttackDefense += 5;
         baseMagicDefense += 5;
         basePrecision += 1;
-        baseAttackSpeed -= 2;
-        baseCastSpeed -= 1;
         baseMoveSpeed += 2;
         baseMagicFind += 0.0001;
         
@@ -375,11 +373,14 @@ public class CircleEntity extends CircleObject{
     }
     public void attack(CircleMap world){
         equippedWeapon.attack(this, (team==1) ? world.playerAttacks():world.monsterAttacks());
-        attackTimer = (int)attackSpeed;
+        //attackTimer is the weapon's attack speed, multiplied by the percent
+        //increase or decrease of the players bonus attack speed
+        attackTimer = (int)(equippedWeapon.attackSpeed() * (1 - attackSpeed));
+        System.out.println("AS: " + equippedWeapon.attackSpeed() + "ratio: 1-" + attackSpeed);
     }
     public void castSpell(CircleMap world){
         equippedSkill.attack(this, (team==1) ? world.playerAttacks():world.monsterAttacks());
-        castTimer = (int)castSpeed;
+        castTimer = (int)(equippedSkill.castSpeed() * (1- castSpeed));
         
     }
     public void pickUp(CircleMap world){

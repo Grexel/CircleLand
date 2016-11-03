@@ -51,12 +51,13 @@ public class MonsterGenerator {
         monster.baseAttackDefense = RedImpMonster.BASE_ATTACK_DEFENSE + level*2;
         monster.baseMagicDefense = RedImpMonster.BASE_MAGIC_DEFENSE + level*2;
         monster.basePrecision = RedImpMonster.BASE_PRECISION + level*1;
-        monster.baseAttackSpeed = RedImpMonster.BASE_ATTACKSPEED + level*1;
-        monster.baseCastSpeed = RedImpMonster.BASE_CASTSPEED + level*1;
+        monster.baseAttackSpeed = 0;
+        monster.baseCastSpeed = 0;
         monster.baseMoveSpeed = RedImpMonster.BASE_MOVESPEED + level*1;
         
         CircleWeapon cW = weaponGenerator.getBiteWeapon(level);
         monster.equippedWeapon(cW);
+        monster.recalculateBonuses(0);
         //System.out.println("Imp level:" + monster.level);
         return monster;
     }

@@ -36,7 +36,7 @@ public class SummonGolemSkill extends CircleSkill{
         owner.mana(owner.mana() - manaCost);
         double velX = owner.moveSpeed() * 2 * Math.cos(owner.heading());
         double velY = owner.moveSpeed() * 2 * Math.sin(owner.heading());
-        SummonGolemSkillAttack bA = new SummonGolemSkillAttack(owner,(int)owner.castSpeed(),skillLevel,
+        SummonGolemSkillAttack bA = new SummonGolemSkillAttack(owner,castLife,skillLevel,
             owner.position().x,owner.position().y,velX,velY,(int)(owner.size() + 8),Color.GRAY,spawnedGolem);
         
         attacks.add(bA);

@@ -35,7 +35,7 @@ public class SummonSkeletonSkill extends CircleSkill{
         owner.mana(owner.mana() - manaCost);
         double velX = owner.moveSpeed() * 2 * Math.cos(owner.heading());
         double velY = owner.moveSpeed() * 2 * Math.sin(owner.heading());
-        SummonSkeletonSkillAttack bA = new SummonSkeletonSkillAttack(owner,(int)owner.castSpeed(),skillLevel,
+        SummonSkeletonSkillAttack bA = new SummonSkeletonSkillAttack(owner,castLife,skillLevel,
             owner.position().x,owner.position().y,velX,velY,(int)(owner.size() + 8),Color.GRAY,spawnedSkeletons);
         
         attacks.add(bA);

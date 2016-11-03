@@ -37,7 +37,7 @@ public class RallySkill extends CircleSkill {
         owner.mana(owner.mana() - manaCost);
         double velX = owner.moveSpeed() * 2 * Math.cos(owner.heading());
         double velY = owner.moveSpeed() * 2 * Math.sin(owner.heading());
-        RallySkillAttack bA = new RallySkillAttack(owner,(int)owner.castSpeed(),owner.magicDamage(),
+        RallySkillAttack bA = new RallySkillAttack(owner,castLife,owner.magicDamage(),
             owner.position().x,owner.position().y,velX,velY,tauntSize,Color.PINK,skillLevel);
         attacks.add(bA);
     }

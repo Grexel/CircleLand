@@ -23,13 +23,15 @@ public class ChargeSkill extends CircleSkill{
     {
         super();
         name = "Charge";
+        castLife = 250;
+        castSpeed = 500;
     }
     public void attack(CircleEntity owner, ArrayList<CircleAttack> attacks)
     {
         owner.mana(owner.mana() - manaCost);
         double velX = owner.moveSpeed() * 3 * Math.cos(owner.heading());
         double velY = owner.moveSpeed() * 3 * Math.sin(owner.heading());
-        ChargeSkillAttack bA = new ChargeSkillAttack(owner,(int)owner.castSpeed(),owner.magicDamage(),
+        ChargeSkillAttack bA = new ChargeSkillAttack(owner,castLife,owner.magicDamage(),
             owner.position().x,owner.position().y,velX,velY,(int)(owner.size() + 8),Color.GRAY);
         
         attacks.add(bA);

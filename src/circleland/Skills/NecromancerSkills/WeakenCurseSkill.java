@@ -34,8 +34,8 @@ public class WeakenCurseSkill extends CircleSkill {
         double velX = 0;
         double velY = 0;
         double curseSize = 100 + skillLevel * 20;
-        int life = 10000 + skillLevel * 5000;
-        WeakenCurseSkillAttack bA = new WeakenCurseSkillAttack(owner,life,0,
+        castLife = 10000 + skillLevel * 5000;
+        WeakenCurseSkillAttack bA = new WeakenCurseSkillAttack(owner,castLife,0,
             owner.aim().x,owner.aim().y,velX,velY,(int)curseSize,CURSEFIELD_COLOR,skillLevel);
         attacks.add(bA);
     }
