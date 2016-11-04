@@ -18,6 +18,7 @@ import circleland.CircleEntity;
 import circleland.CircleMap;
 import circleland.*;
 import circleland.Weapons.*;
+import circleland.Weapons.Guns.*;
 import circleland.Weapons.Swords.*;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -45,7 +46,12 @@ public class WarriorCircle extends CircleClass{
         skills.add(new FortitudeSkill());
         skills.add(new MeleeMasterySkill());
         skills.add(new MetalSkinSkill());
-        equippedWeapon = new SwordWeapon();
+        equippedWeapon = new SWShieldBullet();
+        inventory.add(new HandCannonBullet());
+        inventory.add(new FlintPistolBullet());
+        inventory.add(new RevolverBullet());
+        inventory.add(new GlockBullet());
+        inventory.add(new Colt45Bullet());
     }
     public void addAllSkills(){
         allSkills.add(new BashSkill());
