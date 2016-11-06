@@ -7,6 +7,8 @@ package circleland.Equipment;
 
 import circleland.CircleEntity;
 import circleland.CircleEquipment;
+import static circleland.Weapons.BoomerangWeapon.CENTER_COLOR;
+import java.awt.Color;
 import java.awt.Graphics2D;
 
 /**
@@ -15,25 +17,10 @@ import java.awt.Graphics2D;
  */
 public class CircleArmor extends CircleEquipment {
 
-    @Override
-    public void draw(Graphics2D graphics) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public CircleArmor(){
+        super();
+        name = "Armor";
+        itemColor = new Color(0x3B3A30);
+        
     }
-
-    @Override
-    public void draw(Graphics2D graphics, int x, int y) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void drawDetails(Graphics2D graphics, int x, int y) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void addBonus(CircleEntity entity) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
 }

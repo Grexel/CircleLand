@@ -7,6 +7,7 @@ package circleland.Equipment;
 
 import circleland.CircleEntity;
 import circleland.CircleEquipment;
+import java.awt.Color;
 import java.awt.Graphics2D;
 
 /**
@@ -14,25 +15,9 @@ import java.awt.Graphics2D;
  * @author Jeff
  */
 public class CircleHelmet  extends CircleEquipment {
-
-    @Override
-    public void addBonus(CircleEntity entity) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public CircleHelmet(){
+        super();
+        name = "Helmet";
+        itemColor = new Color(0x5B9AA0);
     }
-
-    @Override
-    public void draw(Graphics2D graphics) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void draw(Graphics2D graphics, int x, int y) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void drawDetails(Graphics2D graphics, int x, int y) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }
