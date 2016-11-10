@@ -5,6 +5,7 @@
  */
 package circleland;
 
+import circleland.Loot.LootGenerator;
 import circleland.Monsters.*;
 import java.awt.Rectangle;
 import java.util.ArrayList;

@@ -89,67 +89,6 @@ public class SkeletonSwordMonster extends CircleMonster{
         equippedWeapon = new RapierWeapon();
         equippedWeapon.bulletSize(50);
     }
-    public void update(long deltaTime, CircleMap world) {
-        //Go to focusedEntity
-        if(focusedEntity != null)
-        {
-            //moveLeft and right
-            if (focusedEntity.position().x > position.x + 10){
-                moveRight = true;
-                moveLeft = false;
-            } else if(focusedEntity.position().x < position.x -10) {
-                moveLeft = true;
-                moveRight = false;
-            } else {
-                moveLeft = false;
-                moveRight = false;
-            }
-            //moveUp and down
-            if (focusedEntity.position().y > position.y + 10){
-                moveDown = true;
-                moveUp = false;
-            } else if(focusedEntity.position().y < position.y -10) {
-                moveUp = true;
-                moveDown = false;
-            } else {
-                moveUp = false;
-                moveDown = false;
-            }
-            //face toward focused entity
-            aim.x = focusedEntity.position().x;
-            aim.y = focusedEntity.position().y;
-            doAttack = true;
-            if(distanceBetweenPoints(focusedEntity.position(), position) > viewRadius * 1.5)
-            {
-                focusedEntity = null;
-                doAttack = false;
-            }
-        } 
-        else if(moveChangeTimer <= 0){
-            int moveChange = rand.nextInt(4);
-            switch(moveChange){
-                case 0: moveLeft(!moveLeft());break;
-                case 1: moveRight(!moveRight());break;
-                case 2: moveUp(!moveUp());break;
-                case 3: moveDown(!moveDown());break;
-            }
-            moveChangeTimer = 500;
-        }
-        else{
-            for(CircleEntity cE : world.players()) {
-                if(cE.intersectsCircle(position, viewRadius))
-                {
-                    //this is our new focus
-                    focusedEntity = cE;
-                    break;
-                }
-            }
-            
-        }
-        //decrement timers;
-        moveChangeTimer -= deltaTime;
-        super.update(deltaTime, world);
-    }
     @Override
     public void draw(Graphics2D graphics){
         super.draw(graphics);

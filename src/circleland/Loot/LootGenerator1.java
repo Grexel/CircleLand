@@ -3,14 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package circleland;
+package circleland.Loot;
 
 import circleland.Affixes.*;
+import circleland.CircleContainer;
+import circleland.CircleEntity;
+import circleland.CircleEquipment;
+import circleland.CircleItem;
+import circleland.CircleWeapon;
 import circleland.Items.Gold;
 import circleland.Weapons.*;
 import circleland.Weapons.Jaws.*;
 import circleland.Weapons.Swords.*;
 import java.awt.Color;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -18,10 +24,12 @@ import java.util.Random;
  *
  * @author Jeff
  */
-public class LootGenerator {
+public class LootGenerator1 {
     private Random rand;
-    public LootGenerator(){
+    private DiagramList diagramList;
+    public LootGenerator1(){
         rand = new Random();
+        diagramList = DiagramLoader.loadDiagram(new File("items/itemList.xml"));
     }
     public CircleItem generateLoot(CircleEntity circle)
     {
@@ -64,13 +72,7 @@ public class LootGenerator {
     }
     public CircleItem getItem(int lootLevel,double magicFind){
         int itemType = rand.nextInt(3);
-        CircleItem holder;
-        switch(itemType){
-            case 0: holder = getBiteWeapon(lootLevel); break;
-            case 1: holder = getRapierWeapon(lootLevel); break;
-            default: holder = new Gold(lootLevel,0,0);
-        }
-        
+        CircleItem holder = diagramList.getItem(lootLevel-10, lootLevel+10);
         //make items magical
         if(holder instanceof CircleEquipment){
             double magicalNess = Math.random();
@@ -93,14 +95,14 @@ public class LootGenerator {
                 this.addAffix((CircleEquipment)holder);
             }
             //add affixes to magical item name
-            if(holder.rarity == 2){
+            if(holder.rarity() == 2){
                 for(int i = 0; i < ((CircleEquipment) holder).affixes().size(); i++){
                     if(i == 0){
                         holder.name(((CircleEquipment) holder).affixes().get(i).prefix() 
-                                + " " + holder.name);
+                                + " " + holder.name());
                     }
                     else if(i == 1){
-                        holder.name(holder.name + " " + ((CircleEquipment) holder).affixes().get(i).suffix());
+                        holder.name(holder.name() + " " + ((CircleEquipment) holder).affixes().get(i).suffix());
                         
                     }
                 }
@@ -109,57 +111,6 @@ public class LootGenerator {
         }//end magic items
         
         return holder;
-    }
-    public CircleWeapon getBiteWeapon(int level){
-        if(level < 3){
-            return new MouseBite();
-        }
-        if(level < 6){
-            return new RatBite();
-        }
-        if(level < 9){
-            return new BeaverBite();
-        }
-        if(level < 12){
-            return new WolfBite();
-        }
-        if(level < 15){
-            return new SharkBite();
-        }
-        if(level < 18){
-            return new BearBite();
-        }
-        if(level < 21){
-            return new HippoBite();
-        }
-        if(level < 24){
-            return new AlligatorBite();
-        }else
-            return new MouseBite();
-    }
-    public CircleWeapon getRapierWeapon(int level){
-        
-        if(level < 3){
-            return new SabreRapier();
-        }
-        if(level < 6){
-            return new FoilRapier();
-        }
-        if(level < 9){
-            return new EpeeRapier();
-        }
-        if(level < 12){
-            return new EstocRapier();
-        }
-        if(level < 15){
-            return new VerdunRapier();
-        }
-        if(level < 18){
-            return new CourtSwordRapier();
-        }
-        else
-            return new SabreRapier();
-        
     }
     public void addAffix(CircleEquipment item){
         int affixNum = rand.nextInt(2);

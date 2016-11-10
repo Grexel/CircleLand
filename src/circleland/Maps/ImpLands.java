@@ -10,7 +10,7 @@ import circleland.CircleLandUtility;
 import circleland.CircleMap;
 import circleland.CircleMouse;
 import circleland.Display.Camera;
-import circleland.LootGenerator;
+import circleland.Loot.LootGenerator;
 import circleland.SpriteSheet;
 import java.awt.Rectangle;
 import java.util.ArrayList;

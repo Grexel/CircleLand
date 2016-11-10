@@ -40,7 +40,7 @@ public class SpriteSheet {
             for(int x = 0; x < image.getWidth(); x+= tileWidth){
                 imageTiles[nextRect] = new Rectangle(x,y,tileWidth,tileHeight);
                 subImages[nextRect] = createSubImage(image,imageTiles[nextRect]);
-                System.out.println("tile:"+ nextRect + "x" + x + "y" + y + "w"+tileWidth+"h"+tileHeight);
+                //System.out.println("tile:"+ nextRect + "x" + x + "y" + y + "w"+tileWidth+"h"+tileHeight);
                 nextRect++;
             }
         }

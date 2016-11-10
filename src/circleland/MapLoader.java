@@ -71,7 +71,7 @@ public class MapLoader {
                     if(elem.getTagName().equalsIgnoreCase("layer")){
                         Element dataElement = (Element)elem.getElementsByTagName("data").item(0);
                         String rawLayerData = dataElement.getTextContent();
-                        System.out.println(rawLayerData);
+                        //System.out.println(rawLayerData);
                         rawLayers.add(rawLayerData);
                     }
                     if(elem.getTagName().equalsIgnoreCase("objectGroup")){

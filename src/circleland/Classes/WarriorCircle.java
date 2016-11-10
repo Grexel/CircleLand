@@ -17,8 +17,6 @@ import circleland.Skills.WarriorSkills.BashSkill;
 import circleland.CircleEntity;
 import circleland.CircleMap;
 import circleland.*;
-import circleland.Equipment.Armor.QuiltedRobeArmor;
-import circleland.Equipment.Boots.CanvasBoots;
 import circleland.Weapons.*;
 import circleland.Weapons.Guns.*;
 import circleland.Weapons.Swords.*;
@@ -54,8 +52,6 @@ public class WarriorCircle extends CircleClass{
         inventory.add(new RevolverBullet());
         inventory.add(new GlockBullet());
         inventory.add(new Colt45Bullet());
-        inventory.add(new QuiltedRobeArmor());
-        inventory.add(new CanvasBoots());
     }
     public void addAllSkills(){
         allSkills.add(new BashSkill());

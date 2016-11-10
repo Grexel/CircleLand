@@ -88,47 +88,11 @@ public class TurretMonster extends CircleMonster{
         gold = 5;
         equippedWeapon = new BulletWeapon();
     }
+    @Override
     public void update(long deltaTime, CircleMap world) {
-        //Go to focusedEntity
-        if(focusedEntity != null)
-        {
-            //face toward focused entity
-            aim.x = focusedEntity.position().x;
-            aim.y = focusedEntity.position().y;
-            double deltaY = aim.y - position.y;
-            double deltaX = aim.x - position.x;
-            heading = Math.atan2(deltaY, deltaX); 
-            doAttack = true;
-            if(distanceBetweenPoints(focusedEntity.position(), position) > viewRadius * 2)
-            {
-                focusedEntity = null;
-                doAttack = false;
-            }
-        } else { //there is no focus
-            //rotate
-            turretRotation += rotationSpeed * deltaTime /1000;
-            heading = turretRotation;
-            //check for players to focus
-            double distance = size/2 + viewRadius;
-            double xP = distance * Math.cos(heading);
-            double yP = distance * Math.sin(heading);
-            Point2D.Double gazePoint = new Point2D.Double(position.x + xP, position.y + yP);
-            aim.x = gazePoint.x;
-            aim.y = gazePoint.y;
-            for(CircleEntity cE : world.players())
-            {
-                if(cE.intersectsCircle(gazePoint, viewRadius))
-                {
-                    //this is our new focus
-                    focusedEntity = cE;
-                    break;
-                }
-            }
-        }
+        super.update(deltaTime, world);
         position.x = staticPosition.x;
         position.y = staticPosition.y;
-        
-        super.update(deltaTime, world);
         //collide with Other circles
     }
     

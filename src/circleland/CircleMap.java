@@ -5,12 +5,14 @@
  */
 package circleland;
 
+import circleland.Loot.LootGenerator;
 import circleland.Display.Camera;
 import circleland.Classes.Summons.SummonedBoneWall;
 import circleland.Display.ChatBox;
 import circleland.Display.DamageDisplayObject;
 import circleland.Display.ParticleDisplayObject;
 import circleland.Items.Portal;
+import circleland.Loot.LootGenerator1;
 import circleland.Monsters.*;
 import circleland.Weapons.BombWeapon;
 import java.awt.*;
@@ -123,9 +125,9 @@ public class CircleMap {
     public Portal switchToMap(){return switchToMap;}
     public void switchToMap(Portal p){switchToMap = p;}
     
-    protected LootGenerator lootGenerator;
-    public LootGenerator lootGenerator(){return lootGenerator;}
-    public void lootGenerator(LootGenerator p){lootGenerator = p;}
+    protected LootGenerator1 lootGenerator;
+    public LootGenerator1 lootGenerator(){return lootGenerator;}
+    public void lootGenerator(LootGenerator1 p){lootGenerator = p;}
     
     public CircleMap(int w, int h)
     {
@@ -167,7 +169,7 @@ public class CircleMap {
         camera.mapRect(mapBounds);
         camera.setFollowing(player);
         players.add(player);
-        lootGenerator = new LootGenerator();
+        lootGenerator = new LootGenerator1();
 //        randomizeTerrain(1000,mapBounds,60,40);
 //        randomEnemies();
     }
@@ -212,7 +214,7 @@ public class CircleMap {
         camera.mapRect(mapBounds);
         camera.setFollowing(player);
         players.add(player);
-        lootGenerator = new LootGenerator();
+        lootGenerator = new LootGenerator1();
     }
     public void update(long deltaTime){
         camera.update(deltaTime, this);
@@ -369,7 +371,7 @@ public class CircleMap {
               for(int x = 0; x < tileArray.length; x++){
                   for(int y = 0; y < tileArray[0].length; y++){
                       Rectangle r = new Rectangle(x*tileWidth,y*tileHeight,tileWidth,tileHeight);
-                      if(camera.intersects(r))
+                      //if(camera.intersects(r))
                           spriteSheet.draw(graphics, x * tileWidth,y * tileHeight, tileArray[x][y][z]);
                   }
               }

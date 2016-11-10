@@ -13,6 +13,7 @@ import java.util.Random;
  */
 public abstract class CircleAffix {
     public static final Random rand = new Random();
+    
     protected double value;
     public double value(){return value;}
     protected double minValue,maxValue;

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itemList name="ChaoticItems">
+    <!-- Weapons -->
+    <weapon type="Rapier" level="1">
+        <name>Sabre</name>
+        <size>100</size>
+        <moveSpeed>200</moveSpeed>
+        <attackSpeed>500</attackSpeed>
+        <attackLife>500</attackLife>
+        <color>0x808080</color>
+        <minDamage>3</minDamage>
+        <maxDamage>7</maxDamage>
+        <pierce>1</pierce>   
+    </weapon>
+    <weapon type="Rapier" level="21">
+        <name>Court Sword Rapier</name>
+        <size>40</size>
+        <moveSpeed>200</moveSpeed>
+        <attackSpeed>500</attackSpeed>
+        <attackLife>500</attackLife>
+        <color>0x808080</color>
+        <minDamage>13</minDamage>
+        <maxDamage>20</maxDamage>
+        <pierce>1</pierce>
+    </weapon>
+    <!-- Armor -->
+    <armor level="1">
+        <name>Quilted Robe</name>
+        <color>0x808080</color>
+        <minDefense>2</minDefense>
+        <maxDefense>5</maxDefense>
+        <strengthReq>10</strengthReq>
+    </armor>
+    <!-- Helmets -->
+    <helmet level="1">
+        <name>Shawl</name>
+        <color>0x808080</color>
+        <minDefense>1</minDefense>
+        <maxDefense>3</maxDefense>
+        <strengthReq>5</strengthReq>
+    </helmet>
+    <!-- Boots -->
+    <boots level="1">
+        <name>Cloth Boots</name>
+        <color>0x808080</color>
+        <minDefense>1</minDefense>
+        <maxDefense>3</maxDefense>
+        <strengthReq>5</strengthReq>
+    </boots>    
+    <!-- Gloves -->    
+    <gloves level="1">
+        <name>Cloth Bracers</name>
+        <color>0x808080</color>
+        <minDefense>1</minDefense>
+        <maxDefense>3</maxDefense>
+        <strengthReq>5</strengthReq>
+    </gloves>        
+</itemList>

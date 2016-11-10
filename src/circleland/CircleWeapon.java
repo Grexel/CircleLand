@@ -59,6 +59,10 @@ public class CircleWeapon extends CircleEquipment
     public Color weaponColor(){ return weaponColor;}
     public String attackSound(){return attackSound;}
     public void attackSound(String l){attackSound = l;}
+    public void minDamage(int m){minDamage = m;}
+    public int minDamage(){ return minDamage;}
+    public void maxDamage(int m){maxDamage = m;}
+    public int maxDamage(){ return maxDamage;}
     public void attack(CircleEntity owner, ArrayList<CircleAttack> attacks)
     {
         SoundManager.queueSound(attackSound);
