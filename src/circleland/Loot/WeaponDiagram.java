@@ -6,6 +6,7 @@
 package circleland.Loot;
 
 import circleland.CircleItem;
+import circleland.CircleWeapon;
 import circleland.Weapons.*;
 import java.awt.Color;
 
@@ -14,8 +15,7 @@ import java.awt.Color;
  * @author Jeff
  */
 public class WeaponDiagram extends ItemDiagram{
-    String name;
-    int itemLevel;
+
     String weaponType;
     int size;
     int moveSpeed;
@@ -27,8 +27,7 @@ public class WeaponDiagram extends ItemDiagram{
     int pierce;
 
     public WeaponDiagram(String name, int itemLevel, String weaponType, int size, int moveSpeed, int attackSpeed, int attackLife, Color color, int minDamage, int maxDamage, int pierce) {
-        this.name = name;
-        this.itemLevel = itemLevel;
+        super(itemLevel, name);
         this.weaponType = weaponType;
         this.size = size;
         this.moveSpeed = moveSpeed;
@@ -42,20 +41,45 @@ public class WeaponDiagram extends ItemDiagram{
     
     @Override
     public CircleItem buildItem() {
+        CircleWeapon weapon;
+        
         if(weaponType.equalsIgnoreCase("Rapier")){
-            RapierWeapon rapier = new RapierWeapon();
-            rapier.itemLevel(itemLevel);
-            rapier.name(name);
-            rapier.bulletSize(size);
-            rapier.attackMoveSpeed(moveSpeed);
-            rapier.attackSpeed(attackSpeed);
-            rapier.attackLife(attackLife);
-            rapier.itemColor(color);
-            rapier.minDamage(minDamage);
-            rapier.maxDamage(maxDamage);
-            rapier.piercing(pierce);
-            return rapier;
+             weapon = new RapierWeapon();
         }
-        return null;
+        else if(weaponType.equalsIgnoreCase("Sword")){
+             weapon = new SwordWeapon();
+        }
+        else if(weaponType.equalsIgnoreCase("Bite")){
+             weapon = new BiteWeapon();
+        }
+        else if(weaponType.equalsIgnoreCase("Bullet")){
+             weapon = new BulletWeapon();
+        }
+        else if(weaponType.equalsIgnoreCase("Splitter")){
+             weapon = new SplittingWeapon();
+        }
+        else if(weaponType.equalsIgnoreCase("Nova")){
+             weapon = new NovaWeapon();
+        }
+        else if(weaponType.equalsIgnoreCase("Bounce")){
+             weapon = new BounceWeapon();
+        }
+        else if(weaponType.equalsIgnoreCase("Boomerang")){
+             weapon = new BoomerangWeapon();
+        }
+        else {
+             weapon = new BulletWeapon();
+        }
+            weapon.itemLevel(getItemLevel());
+            weapon.name(getName());
+            weapon.bulletSize(size);
+            weapon.attackMoveSpeed(moveSpeed);
+            weapon.attackSpeed(attackSpeed);
+            weapon.attackLife(attackLife);
+            weapon.specialColor(color);
+            weapon.minDamage(minDamage);
+            weapon.maxDamage(maxDamage);
+            weapon.piercing(pierce);
+            return weapon;
     }
 }

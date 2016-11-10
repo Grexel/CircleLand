@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <itemList name="ChaoticItems">
     <!-- Weapons -->
-    <weapon type="Rapier" level="1">
+    <weapon type="Rapier" level="3">
         <name>Sabre</name>
         <size>100</size>
         <moveSpeed>200</moveSpeed>
@@ -12,15 +12,213 @@
         <maxDamage>7</maxDamage>
         <pierce>1</pierce>   
     </weapon>
-    <weapon type="Rapier" level="21">
-        <name>Court Sword Rapier</name>
-        <size>40</size>
+    <weapon type="Rapier" level="7">
+        <name>Foil</name>
+        <size>100</size>
         <moveSpeed>200</moveSpeed>
         <attackSpeed>500</attackSpeed>
         <attackLife>500</attackLife>
         <color>0x808080</color>
+        <minDamage>5</minDamage>
+        <maxDamage>10</maxDamage>
+        <pierce>1</pierce>   
+    </weapon>
+    <weapon type="Rapier" level="12">
+        <name>Epée</name>
+        <size>100</size>
+        <moveSpeed>200</moveSpeed>
+        <attackSpeed>500</attackSpeed>
+        <attackLife>500</attackLife>
+        <color>0x808080</color>
+        <minDamage>7</minDamage>
+        <maxDamage>14</maxDamage>
+        <pierce>1</pierce>
+    </weapon>
+    <weapon type="Rapier" level="16">
+        <name>Estoc</name>
+        <size>100</size>
+        <moveSpeed>200</moveSpeed>
+        <attackSpeed>500</attackSpeed>
+        <attackLife>500</attackLife>
+        <color>0x808080</color>
+        <minDamage>14</minDamage>
+        <maxDamage>25</maxDamage>
+        <pierce>1</pierce>
+    </weapon>
+    <weapon type="Rapier" level="21">
+        <name>Court Sword Rapier</name>
+        <size>40</size>
+        <moveSpeed>200</moveSpeed>
+        <attackSpeed>300</attackSpeed>
+        <attackLife>300</attackLife>
+        <color>0x808080</color>
         <minDamage>13</minDamage>
         <maxDamage>20</maxDamage>
+        <pierce>1</pierce>
+    </weapon>
+    <weapon type="Rapier" level="21">
+        <name>Verdun</name>
+        <size>200</size>
+        <moveSpeed>500</moveSpeed>
+        <attackSpeed>750</attackSpeed>
+        <attackLife>500</attackLife>
+        <color>0x808080</color>
+        <minDamage>35</minDamage>
+        <maxDamage>50</maxDamage>
+        <pierce>1</pierce>
+    </weapon>
+    <weapon type="Bite" level="1">
+        <name>Mouse Jaw</name>
+        <size>40</size>
+        <moveSpeed>100</moveSpeed>
+        <attackSpeed>400</attackSpeed>
+        <attackLife>300</attackLife>
+        <color>0x808080</color>
+        <minDamage>2</minDamage>
+        <maxDamage>4</maxDamage>
+        <pierce>1</pierce>
+    </weapon>
+    <weapon type="Bite" level="5">
+        <name>Rat Jaw</name>
+        <size>40</size>
+        <moveSpeed>100</moveSpeed>
+        <attackSpeed>400</attackSpeed>
+        <attackLife>300</attackLife>
+        <color>0x808080</color>
+        <minDamage>4</minDamage>
+        <maxDamage>6</maxDamage>
+        <pierce>1</pierce>
+    </weapon>
+    <weapon type="Bite" level="9">
+        <name>Beaver Jaw</name>
+        <size>60</size>
+        <moveSpeed>100</moveSpeed>
+        <attackSpeed>400</attackSpeed>
+        <attackLife>300</attackLife>
+        <color>0x808080</color>
+        <minDamage>6</minDamage>
+        <maxDamage>9</maxDamage>
+        <pierce>1</pierce>
+    </weapon>
+    <weapon type="Bite" level="12">
+        <name>Wolf Jaw</name>
+        <size>60</size>
+        <moveSpeed>100</moveSpeed>
+        <attackSpeed>400</attackSpeed>
+        <attackLife>300</attackLife>
+        <color>0x808080</color>
+        <minDamage>10</minDamage>
+        <maxDamage>14</maxDamage>
+        <pierce>1</pierce>
+    </weapon>
+    <weapon type="Bite" level="16">
+        <name>Shark Jaw</name>
+        <size>60</size>
+        <moveSpeed>100</moveSpeed>
+        <attackSpeed>400</attackSpeed>
+        <attackLife>300</attackLife>
+        <color>0x808080</color>
+        <minDamage>14</minDamage>
+        <maxDamage>19</maxDamage>
+        <pierce>1</pierce>
+    </weapon>
+    <weapon type="Bite" level="19">
+        <name>Bear Jaw</name>
+        <size>60</size>
+        <moveSpeed>100</moveSpeed>
+        <attackSpeed>400</attackSpeed>
+        <attackLife>300</attackLife>
+        <color>0x808080</color>
+        <minDamage>18</minDamage>
+        <maxDamage>25</maxDamage>
+        <pierce>1</pierce>
+    </weapon>
+    <weapon type="Bite" level="22">
+        <name>Hippo Jaw</name>
+        <size>80</size>
+        <moveSpeed>100</moveSpeed>
+        <attackSpeed>400</attackSpeed>
+        <attackLife>300</attackLife>
+        <color>0x808080</color>
+        <minDamage>23</minDamage>
+        <maxDamage>29</maxDamage>
+        <pierce>1</pierce>
+    </weapon>
+    <weapon type="Bite" level="25">
+        <name>Alligator Jaw</name>
+        <size>80</size>
+        <moveSpeed>100</moveSpeed>
+        <attackSpeed>400</attackSpeed>
+        <attackLife>300</attackLife>
+        <color>0x808080</color>
+        <minDamage>31</minDamage>
+        <maxDamage>40</maxDamage>
+        <pierce>1</pierce>
+    </weapon>
+    <weapon type="Bullet" level="1">
+        <name>Hand Cannon</name>
+        <size>15</size>
+        <moveSpeed>300</moveSpeed>
+        <attackSpeed>750</attackSpeed>
+        <attackLife>666</attackLife>
+        <color>0x808080</color>
+        <minDamage>2</minDamage>
+        <maxDamage>4</maxDamage>
+        <pierce>1</pierce>
+    </weapon>
+    <weapon type="Bullet" level="5">
+        <name>Flint Pistol</name>
+        <size>15</size>
+        <moveSpeed>250</moveSpeed>
+        <attackSpeed>650</attackSpeed>
+        <attackLife>875</attackLife>
+        <color>0x808080</color>
+        <minDamage>4</minDamage>
+        <maxDamage>7</maxDamage>
+        <pierce>1</pierce>
+    </weapon>
+    <weapon type="Bullet" level="8">
+        <name>Revolver</name>
+        <size>15</size>
+        <moveSpeed>400</moveSpeed>
+        <attackSpeed>500</attackSpeed>
+        <attackLife>500</attackLife>
+        <color>0x808080</color>
+        <minDamage>7</minDamage>
+        <maxDamage>12</maxDamage>
+        <pierce>2</pierce>
+    </weapon>
+    <weapon type="Bullet" level="12">
+        <name>Glock</name>
+        <size>18</size>
+        <moveSpeed>300</moveSpeed>
+        <attackSpeed>400</attackSpeed>
+        <attackLife>666</attackLife>
+        <color>0x808080</color>
+        <minDamage>11</minDamage>
+        <maxDamage>16</maxDamage>
+        <pierce>1</pierce>
+    </weapon>
+    <weapon type="Bullet" level="17">
+        <name>Colt .45</name>
+        <size>20</size>
+        <moveSpeed>400</moveSpeed>
+        <attackSpeed>600</attackSpeed>
+        <attackLife>500</attackLife>
+        <color>0x808080</color>
+        <minDamage>21</minDamage>
+        <maxDamage>35</maxDamage>
+        <pierce>2</pierce>
+    </weapon>
+    <weapon type="Bullet" level="21">
+        <name>S&amp;W Shield</name>
+        <size>20</size>
+        <moveSpeed>400</moveSpeed>
+        <attackSpeed>400</attackSpeed>
+        <attackLife>500</attackLife>
+        <color>0x808080</color>
+        <minDamage>21</minDamage>
+        <maxDamage>35</maxDamage>
         <pierce>1</pierce>
     </weapon>
     <!-- Armor -->

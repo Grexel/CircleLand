@@ -34,16 +34,14 @@ public class DiagramList {
     }
     public ItemDiagram getRandomDiagram(int startLevel, int endLevel){
         if(!sorted)sortList();
-        int startIndex = -1;
+        int startIndex = 0;
         int endIndex = diagramList.size();
         for(int i = 0; i < diagramList.size(); i++){
-            if(startIndex == -1 && diagramList.get(i).getItemLevel() == startLevel)
+            if(diagramList.get(i).getItemLevel() == startLevel)
                 startIndex = i;
-            else if(endIndex == -1 && diagramList.get(i).getItemLevel() == endLevel+1)
+            else if( diagramList.get(i).getItemLevel() == endLevel+1)
                 endIndex = i;
         }
-        if(startIndex < 0) startIndex = 0;
-        if(endIndex > diagramList.size()) endIndex = diagramList.size();
         int range = endIndex - startIndex;
         if(range <= 0) return diagramList.get(startIndex);
         return diagramList.get(rand.nextInt(range)+startIndex);
@@ -51,5 +49,12 @@ public class DiagramList {
     public CircleItem getItem(int startLevel, int endLevel){
         ItemDiagram diagram = getRandomDiagram(startLevel, endLevel);
         return diagram.buildItem();
+    }
+    public CircleItem getItem(String name){
+        for(ItemDiagram itemDiag : diagramList){
+            if(itemDiag.getName().equalsIgnoreCase(name))
+                return itemDiag.buildItem();
+        }
+        return null;
     }
 }

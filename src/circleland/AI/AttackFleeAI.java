@@ -88,6 +88,10 @@ public class AttackFleeAI extends CircleLandAI{
             owner.aim().y = owner.focusedEntity().position().y;
             
             //if fleeing, don't attack
+            if(hitEnemy){
+                fleeTimer = fleeDelay;
+                hitEnemy = false;
+            }
             if(fleeTimer > 0)
                 owner.doAttack(false);
             
@@ -96,7 +100,6 @@ public class AttackFleeAI extends CircleLandAI{
                 if(Math.abs(owner.focusedEntity().position().x - owner.position().x) < stayAwayRange){
                     if(fleeTimer < 0){
                         owner.doAttack(true);
-                        fleeTimer = fleeDelay;
                     }
                 }
             }

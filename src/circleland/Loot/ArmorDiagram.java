@@ -15,17 +15,22 @@ import java.util.Random;
  * @author Jeff
  */
 public class ArmorDiagram extends ItemDiagram{
-    public static Random rand = new Random();
-    String name;
-    int itemLevel;
-    String armorType;
-    Color color;
-    int minDefense;
-    int maxDefense;
+    private static Random rand = new Random();
+
+    public static Random getRand() {
+        return rand;
+    }
+
+    public static void setRand(Random aRand) {
+        rand = aRand;
+    }
+    private String armorType;
+    private Color color;
+    private int minDefense;
+    private int maxDefense;
 
     public ArmorDiagram(String name, int itemLevel, String armorType, Color color, int minDefense, int maxDefense) {
-        this.name = name;
-        this.itemLevel = itemLevel;
+        super(itemLevel,name);
         this.armorType = armorType;
         this.color = color;
         this.minDefense = minDefense;
@@ -35,13 +40,45 @@ public class ArmorDiagram extends ItemDiagram{
     public CircleItem buildItem() {
         if(armorType.equalsIgnoreCase("armor")){
             CircleArmor armor = new CircleArmor();
-            armor.itemLevel(itemLevel);
-            armor.name(name);
-            armor.itemColor(color);
+            armor.itemLevel(getItemLevel());
+            armor.name(getName());
+            armor.specialColor(color);
             armor.defense(rand.nextInt(maxDefense - minDefense)+minDefense);
             return armor;
         }
         return null;
+    }
+
+    public String getArmorType() {
+        return armorType;
+    }
+
+    public void setArmorType(String armorType) {
+        this.armorType = armorType;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public int getMinDefense() {
+        return minDefense;
+    }
+
+    public void setMinDefense(int minDefense) {
+        this.minDefense = minDefense;
+    }
+
+    public int getMaxDefense() {
+        return maxDefense;
+    }
+
+    public void setMaxDefense(int maxDefense) {
+        this.maxDefense = maxDefense;
     }
 
     

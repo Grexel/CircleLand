@@ -13,9 +13,8 @@ import circleland.CircleItem;
 import circleland.CircleWeapon;
 import circleland.Items.Gold;
 import circleland.Weapons.*;
-import circleland.Weapons.Jaws.*;
-import circleland.Weapons.Swords.*;
 import java.awt.Color;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -25,8 +24,10 @@ import java.util.Random;
  */
 public class LootGenerator {
     private Random rand;
+    private DiagramList diagramList;
     public LootGenerator(){
         rand = new Random();
+        diagramList = DiagramLoader.loadDiagram(new File("items/itemList.xml"));
     }
     public CircleItem generateLoot(CircleEntity circle)
     {
@@ -67,15 +68,12 @@ public class LootGenerator {
         }
         return newItems;
     }
+    public CircleItem getItem(String itemName){
+        return diagramList.getItem(itemName);
+    }
     public CircleItem getItem(int lootLevel,double magicFind){
         int itemType = rand.nextInt(3);
-        CircleItem holder;
-        switch(itemType){
-            case 0: holder = getBiteWeapon(lootLevel); break;
-            case 1: holder = getRapierWeapon(lootLevel); break;
-            default: holder = new Gold(lootLevel,0,0);
-        }
-        
+        CircleItem holder = diagramList.getItem(lootLevel-10, lootLevel+10);
         //make items magical
         if(holder instanceof CircleEquipment){
             double magicalNess = Math.random();
@@ -114,57 +112,6 @@ public class LootGenerator {
         }//end magic items
         
         return holder;
-    }
-    public CircleWeapon getBiteWeapon(int level){
-        if(level < 3){
-            return new MouseBite();
-        }
-        if(level < 6){
-            return new RatBite();
-        }
-        if(level < 9){
-            return new BeaverBite();
-        }
-        if(level < 12){
-            return new WolfBite();
-        }
-        if(level < 15){
-            return new SharkBite();
-        }
-        if(level < 18){
-            return new BearBite();
-        }
-        if(level < 21){
-            return new HippoBite();
-        }
-        if(level < 24){
-            return new AlligatorBite();
-        }else
-            return new MouseBite();
-    }
-    public CircleWeapon getRapierWeapon(int level){
-        
-        if(level < 3){
-            return new SabreRapier();
-        }
-        if(level < 6){
-            return new FoilRapier();
-        }
-        if(level < 9){
-            return new EpeeRapier();
-        }
-        if(level < 12){
-            return new EstocRapier();
-        }
-        if(level < 15){
-            return new VerdunRapier();
-        }
-        if(level < 18){
-            return new CourtSwordRapier();
-        }
-        else
-            return new SabreRapier();
-        
     }
     public void addAffix(CircleEquipment item){
         int affixNum = rand.nextInt(2);

@@ -13,5 +13,9 @@ import java.util.Random;
  */
 public abstract class CircleLandAI {
     public static final Random rand = new Random();
+    protected boolean hitEnemy;
+    public boolean hitEnemy(){return hitEnemy;}
+    public void hitEnemy(boolean ai){hitEnemy = ai;}
+    
     public abstract void update(long deltaTime, CircleEntity owner, CircleMap world);
 }

@@ -8,8 +8,6 @@ package circleland.NPCs;
 import circleland.*;
 import circleland.Display.ChatBox;
 import circleland.Display.MarketScreen;
-import circleland.Weapons.Swords.FoilRapier;
-import circleland.Weapons.Swords.VerdunRapier;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
@@ -61,9 +59,9 @@ public class Alaira extends CircleNPC{
         else{
             Rectangle2D.Double mRect = new Rectangle2D.Double(300,300,200,300);
             MarketScreen mS = new MarketScreen(mRect,player);
-            mS.items().add(new FoilRapier());
+            //mS.items().add(new FoilRapier());
             world.camera().marketScreen(mS);
-            player.inventory().add(new VerdunRapier());
+            //player.inventory().add(new VerdunRapier());
             ChatBox cb = new ChatBox((int)position.x,(int)position.y - 50,impQuestString);
             world.chatBoxes().add(cb);
         }

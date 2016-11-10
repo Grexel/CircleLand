@@ -56,7 +56,7 @@ public class MonsterGenerator {
         monster.baseCastSpeed = 0;
         monster.baseMoveSpeed = RedImpMonster.BASE_MOVESPEED + level*1;
         
-        CircleWeapon cW = weaponGenerator.getBiteWeapon(level);
+        CircleWeapon cW = (CircleWeapon)weaponGenerator.getItem("Mouse Jaw");
         monster.equippedWeapon(cW);
         monster.recalculateBonuses(0);
         //System.out.println("Imp level:" + monster.level);
@@ -90,7 +90,7 @@ public class MonsterGenerator {
         monster.baseCastSpeed = HoundMonster.BASE_CASTSPEED + level*1;
         monster.baseMoveSpeed = HoundMonster.BASE_MOVESPEED + level*1;
         
-        CircleWeapon cW = weaponGenerator.getBiteWeapon(level);
+        CircleWeapon cW = (CircleWeapon)weaponGenerator.getItem("Beaver Jaw");
         cW.bulletSize(30);
         monster.equippedWeapon(cW);
         //System.out.println("Hound level:" + monster.level);
@@ -124,7 +124,7 @@ public class MonsterGenerator {
         monster.baseCastSpeed = FlyMonster.BASE_CASTSPEED + level*1;
         monster.baseMoveSpeed = FlyMonster.BASE_MOVESPEED + level*1;
         
-        CircleWeapon cW = weaponGenerator.getBiteWeapon(level);
+        CircleWeapon cW = (CircleWeapon)weaponGenerator.getItem("Rat Jaw");
         monster.equippedWeapon(cW);
         //System.out.println("Fly level:" + monster.level);
         return monster;
@@ -157,7 +157,7 @@ public class MonsterGenerator {
         monster.baseCastSpeed = InchWormMonster.BASE_CASTSPEED + level*1;
         monster.baseMoveSpeed = InchWormMonster.BASE_MOVESPEED + level*1;
         
-        CircleWeapon cW = weaponGenerator.getBiteWeapon(level);
+        CircleWeapon cW = (CircleWeapon)weaponGenerator.getItem("Foil");
         cW.bulletSize(30);
         monster.equippedWeapon(cW);
        // System.out.println("InchWorm level:" + monster.level);
@@ -191,7 +191,7 @@ public class MonsterGenerator {
         monster.baseCastSpeed = SkeletonRangerMonster.BASE_CASTSPEED + level*1;
         monster.baseMoveSpeed = SkeletonRangerMonster.BASE_MOVESPEED + level*1;
         
-        CircleWeapon cW = weaponGenerator.getBiteWeapon(level);
+        CircleWeapon cW = (CircleWeapon)weaponGenerator.getItem("Flint Pistol");
         monster.equippedWeapon(cW);
         //System.out.println("SkeletonRanger level:" + monster.level);
         return monster;
@@ -224,7 +224,7 @@ public class MonsterGenerator {
         monster.baseCastSpeed = SkeletonSwordMonster.BASE_CASTSPEED + level*1;
         monster.baseMoveSpeed = SkeletonSwordMonster.BASE_MOVESPEED + level*1;
         
-        CircleWeapon cW = weaponGenerator.getBiteWeapon(level);
+        CircleWeapon cW = (CircleWeapon)weaponGenerator.getItem("Foil");
         monster.equippedWeapon(cW);
         //System.out.println("SkeletonSword level:" + monster.level);
         return monster;
@@ -259,7 +259,7 @@ public class MonsterGenerator {
         monster.baseCastSpeed = TurretMonster.BASE_CASTSPEED + level*1;
         monster.baseMoveSpeed = TurretMonster.BASE_MOVESPEED + level*1;
         
-        CircleWeapon cW = weaponGenerator.getBiteWeapon(level);
+        CircleWeapon cW = (CircleWeapon)weaponGenerator.getItem("Flint Pistol");
         monster.equippedWeapon(cW);
         //System.out.println("Turret level:" + monster.level);
         return monster;
@@ -294,7 +294,7 @@ public class MonsterGenerator {
         monster.baseCastSpeed = CadaverMonster.BASE_CASTSPEED + level*1;
         monster.baseMoveSpeed = CadaverMonster.BASE_MOVESPEED + level*1;
         
-        CircleWeapon cW = weaponGenerator.getBiteWeapon(level);
+        CircleWeapon cW = (CircleWeapon)weaponGenerator.getItem("Mouse Jaw");
         monster.equippedWeapon(cW);
         //System.out.println("Cadaver level:" + monster.level);
         return monster;
@@ -329,7 +329,7 @@ public class MonsterGenerator {
         monster.baseCastSpeed = RedImpSpawner.BASE_CASTSPEED + level*1;
         monster.baseMoveSpeed = RedImpSpawner.BASE_MOVESPEED + level*1;
         
-        CircleWeapon cW = weaponGenerator.getBiteWeapon(level);
+        CircleWeapon cW = (CircleWeapon)weaponGenerator.getItem("Mouse Jaw");
         monster.equippedWeapon(cW);
         monster.recalculateBonuses(0);
         monster.health(monster.maxHealth());

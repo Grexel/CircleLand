@@ -73,8 +73,8 @@ public class DiagramLoader {
                         int attackLife = Integer.parseInt(
                             elem.getElementsByTagName("attackLife")
                                     .item(0).getTextContent());
-                        Color color = Color.getColor(elem.getElementsByTagName("color")
-                                    .item(0).getTextContent(),Color.WHITE);
+                        Color color = Color.decode(elem.getElementsByTagName("color")
+                                    .item(0).getTextContent());
                         int minDamage = Integer.parseInt(
                             elem.getElementsByTagName("minDamage")
                                     .item(0).getTextContent());
@@ -99,8 +99,8 @@ public class DiagramLoader {
                         String armorType = "armor";
                         String name = elem.getElementsByTagName("name")
                                 .item(0).getTextContent();
-                        Color color = Color.getColor(elem.getElementsByTagName("color")
-                                    .item(0).getTextContent(),Color.WHITE);
+                        Color color = Color.decode(elem.getElementsByTagName("color")
+                                    .item(0).getTextContent());
                         int minDefense = Integer.parseInt(
                             elem.getElementsByTagName("minDefense")
                                     .item(0).getTextContent());

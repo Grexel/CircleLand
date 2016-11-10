@@ -12,7 +12,6 @@ import circleland.Display.ChatBox;
 import circleland.Display.DamageDisplayObject;
 import circleland.Display.ParticleDisplayObject;
 import circleland.Items.Portal;
-import circleland.Loot.LootGenerator1;
 import circleland.Monsters.*;
 import circleland.Weapons.BombWeapon;
 import java.awt.*;
@@ -125,9 +124,9 @@ public class CircleMap {
     public Portal switchToMap(){return switchToMap;}
     public void switchToMap(Portal p){switchToMap = p;}
     
-    protected LootGenerator1 lootGenerator;
-    public LootGenerator1 lootGenerator(){return lootGenerator;}
-    public void lootGenerator(LootGenerator1 p){lootGenerator = p;}
+    protected LootGenerator lootGenerator;
+    public LootGenerator lootGenerator(){return lootGenerator;}
+    public void lootGenerator(LootGenerator p){lootGenerator = p;}
     
     public CircleMap(int w, int h)
     {
@@ -169,7 +168,7 @@ public class CircleMap {
         camera.mapRect(mapBounds);
         camera.setFollowing(player);
         players.add(player);
-        lootGenerator = new LootGenerator1();
+        lootGenerator = new LootGenerator();
 //        randomizeTerrain(1000,mapBounds,60,40);
 //        randomEnemies();
     }
@@ -214,7 +213,7 @@ public class CircleMap {
         camera.mapRect(mapBounds);
         camera.setFollowing(player);
         players.add(player);
-        lootGenerator = new LootGenerator1();
+        lootGenerator = new LootGenerator();
     }
     public void update(long deltaTime){
         camera.update(deltaTime, this);

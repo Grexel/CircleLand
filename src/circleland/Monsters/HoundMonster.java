@@ -30,8 +30,8 @@ public class HoundMonster extends CircleMonster{
     public static final int BASE_ATTACK_DEFENSE= 2;
     public static final int BASE_MAGIC_DEFENSE= 1;
     public static final int BASE_PRECISION = 1;
-    public static final int BASE_ATTACKSPEED= 1000;
-    public static final int BASE_CASTSPEED= 1000;
+    public static final int BASE_ATTACKSPEED= 0;
+    public static final int BASE_CASTSPEED= 0;
     public static final int BASE_MOVESPEED= 80;
     
     private int viewRadius;

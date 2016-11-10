@@ -14,6 +14,12 @@ import circleland.CircleItem;
 public abstract class ItemDiagram implements Comparable<ItemDiagram> {
     private int itemLevel;
     private String name;
+
+    public ItemDiagram(int itemLevel, String name) {
+        this.itemLevel = itemLevel;
+        this.name = name;
+    }
+    
     public abstract CircleItem buildItem();
 
     public int getItemLevel() {

@@ -19,12 +19,19 @@ public class CircleMonster extends CircleEntity{
     public CircleMonster(){
         //artificialIntelligence = new StraightChaseAI();
        artificialIntelligence = new AttackFleeAI();
+      
     }
     @Override
     public void hitByAttack(CircleAttack cA,CircleMap world)
     {
         super.hitByAttack(cA, world);
         focusedEntity = cA.attackOwner();
+    }
+
+    @Override
+    public void hitEnemy(CircleAttack cA, CircleEntity enemy) {
+        super.hitEnemy(cA, enemy);
+        artificialIntelligence.hitEnemy(true);
     }
     
     @Override
