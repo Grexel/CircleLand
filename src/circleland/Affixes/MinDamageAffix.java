@@ -22,8 +22,8 @@ public class MinDamageAffix extends CircleAffix{
     public MinDamageAffix(int level){
         prefix = "Precise";
         suffix = "of Exacting";
-        value = level;
-        value = rand.nextInt(level*maxValue - level*minValue) + level*minValue;
+        value = 0;
+        value = rand.nextInt(level*maxValue - level*minValue + 1) + level*minValue;
     }
     
     @Override
@@ -35,5 +35,4 @@ public class MinDamageAffix extends CircleAffix{
     public String getDetails() {
         return "Minimum Damage +" + value;
     }
-    
 }

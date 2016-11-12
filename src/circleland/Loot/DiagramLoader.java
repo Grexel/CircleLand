@@ -90,13 +90,14 @@ public class DiagramLoader {
                                 attackLife, color, minDamage, maxDamage, pierce);
                         diagramList.addDiagram(diag);
                         System.out.println("weapon added");
-                        
                     }
+                    
+                    //Add armor diagram(Armor,Helmets,Boots,Gloves,Rings,Amulets)
                     if(elem.getTagName().equalsIgnoreCase("armor")){
                         //parseXML for diagram details
                         int itemLevel = Integer.parseInt(
                                 elem.getAttribute("level")); 
-                        String armorType = "armor";
+                        String armorType = elem.getAttribute("type");
                         String name = elem.getElementsByTagName("name")
                                 .item(0).getTextContent();
                         Color color = Color.decode(elem.getElementsByTagName("color")
@@ -112,7 +113,6 @@ public class DiagramLoader {
                                 armorType, color, minDefense, maxDefense);
                         diagramList.addDiagram(diag);
                         System.out.println("armor added");
-                        
                     }
                 }
             }

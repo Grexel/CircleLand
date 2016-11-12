@@ -11,6 +11,8 @@ import circleland.CircleEntity;
 import circleland.CircleEquipment;
 import circleland.CircleItem;
 import circleland.CircleWeapon;
+import circleland.Equipment.CircleAmulet;
+import circleland.Equipment.CircleRing;
 import circleland.Items.Gold;
 import circleland.Weapons.*;
 import java.awt.Color;
@@ -72,8 +74,16 @@ public class LootGenerator {
         return diagramList.getItem(itemName);
     }
     public CircleItem getItem(int lootLevel,double magicFind){
-        int itemType = rand.nextInt(3);
-        CircleItem holder = diagramList.getItem(lootLevel-10, lootLevel+10);
+        double lootTier = Math.random();
+        CircleItem holder;
+        
+        //based on randomness, either only get something from level 0, or normal range
+        if(lootTier < .25){
+            holder = diagramList.getItem(0,0);
+        }
+        else{
+            holder = diagramList.getItem(lootLevel-10, lootLevel+10);            
+        }
         //make items magical
         if(holder instanceof CircleEquipment){
             double magicalNess = Math.random();
@@ -90,6 +100,15 @@ public class LootGenerator {
             else if(magicFind > magicalNess){    //return magic item
                 numAffix = rand.nextInt(2) + 1;
                 ((CircleEquipment) holder).rarity(2);
+            }
+            //make sure rings and amulets always have an affix
+            if(holder instanceof CircleRing || holder instanceof CircleAmulet){
+                if(numAffix == 0){
+                    numAffix = 1;                
+                    ((CircleEquipment) holder).rarity(2);
+                }
+                //set level from 0 to itemlevel
+                ((CircleEquipment) holder).itemLevel(lootLevel);
             }
             for(int i = 0; i < numAffix; i++)
             {
@@ -114,13 +133,25 @@ public class LootGenerator {
         return holder;
     }
     public void addAffix(CircleEquipment item){
-        int affixNum = rand.nextInt(2);
+        int affixNum = rand.nextInt(6);
         switch(affixNum){
             case 0 : //add mindamageAffix;
                 item.affixes().add(new MinDamageAffix(item.itemLevel()));
                 break;
             case 1 : //add mindamageAffix;
                 item.affixes().add(new ArmorAffix(item.itemLevel()));
+                break;
+            case 2 : //add mindamageAffix;
+                item.affixes().add(new StrengthAffix(item.itemLevel()));
+                break;
+            case 3 : //add mindamageAffix;
+                item.affixes().add(new DexterityAffix(item.itemLevel()));
+                break;
+            case 4 : //add mindamageAffix;
+                item.affixes().add(new MagicAffix(item.itemLevel()));
+                break;
+            case 5 : //add mindamageAffix;
+                item.affixes().add(new FortitudeAffix(item.itemLevel()));
                 break;
             default:
                 item.affixes().add(new MinDamageAffix(item.itemLevel()));

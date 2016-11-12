@@ -6,31 +6,32 @@
 package circleland.Affixes;
 
 import circleland.CircleAffix;
+import static circleland.CircleAffix.rand;
 import circleland.CircleEntity;
 
 /**
  *
  * @author Jeff
  */
-
-public class ArmorAffix extends CircleAffix{
-    public static final int minValue = 2;
-    public static final int maxValue = 4;
+public class DexterityAffix extends CircleAffix{
+    public static final int minValue = 1;
+    public static final int maxValue = 2;
     
-    public ArmorAffix(int level){
-        prefix = "Tough";
-        suffix = "of Protection";
+    public DexterityAffix(int level){
+        prefix = "Dextrous";
+        suffix = "of Dexterity";
+        value = 0;
         value = rand.nextInt(level*maxValue - level*minValue + 1) + level*minValue;
     }
     
     @Override
     public void addBonus(CircleEntity entity) {
-      entity.attackDefense(entity.attackDefense()+ (int)value);
+      entity.dexterity(entity.dexterity() + (int)value);
     }
 
     @Override
     public String getDetails() {
-        return "Armor Bonus +" + value;
+        return "Dexterity +" + value;
     }
-    
 }
+

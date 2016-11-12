@@ -5,8 +5,9 @@
  */
 package circleland.Loot;
 
+import circleland.CircleEquipment;
 import circleland.CircleItem;
-import circleland.Equipment.CircleArmor;
+import circleland.Equipment.*;
 import java.awt.Color;
 import java.util.Random;
 
@@ -38,15 +39,34 @@ public class ArmorDiagram extends ItemDiagram{
     }
     @Override
     public CircleItem buildItem() {
+        CircleEquipment armor;
         if(armorType.equalsIgnoreCase("armor")){
-            CircleArmor armor = new CircleArmor();
-            armor.itemLevel(getItemLevel());
-            armor.name(getName());
-            armor.specialColor(color);
-            armor.defense(rand.nextInt(maxDefense - minDefense)+minDefense);
-            return armor;
+            armor = new CircleArmor();
         }
-        return null;
+        else if(armorType.equalsIgnoreCase("helmet")){
+            armor = new CircleHelmet();
+        }
+        else if(armorType.equalsIgnoreCase("gloves")){
+            armor = new CircleGloves();
+        }
+        else if(armorType.equalsIgnoreCase("boots")){
+            armor = new CircleBoots();
+        }
+        else if(armorType.equalsIgnoreCase("ring")){
+            armor = new CircleRing();
+        }
+        else if(armorType.equalsIgnoreCase("amulet")){
+            armor = new CircleAmulet();
+        }
+        else{
+            armor = new CircleArmor();
+        }
+        
+        armor.itemLevel(getItemLevel());
+        armor.name(getName());
+        armor.specialColor(getColor());
+        armor.defense(rand.nextInt(maxDefense - minDefense+1)+minDefense);
+        return armor;
     }
 
     public String getArmorType() {
