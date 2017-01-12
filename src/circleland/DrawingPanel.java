@@ -89,7 +89,7 @@ public class DrawingPanel extends JPanel implements ComponentListener{
                 RenderingHints.VALUE_ANTIALIAS_ON);
         hints.put(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
         offscreen.addRenderingHints(hints);
-
+/*
         frame = new JFrame("Circle Land TM");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -97,6 +97,7 @@ public class DrawingPanel extends JPanel implements ComponentListener{
         frame.pack();
         frame.setLocation(100, 100);
         frame.setVisible(true);
+        */
     }
 
     /**
@@ -163,7 +164,7 @@ public class DrawingPanel extends JPanel implements ComponentListener{
 //            return;
 //        }
         onscreen.drawImage(bufImage1, 0, 0, null);
-        frame.repaint();
+        //frame.repaint();
     }
 
     /**

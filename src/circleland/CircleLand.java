@@ -57,7 +57,7 @@ public class CircleLand extends DrawingPanel implements MouseListener, MouseMoti
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         // TODO code application logic here
         CircleLand world = new CircleLand();
         world.setDoubleBuffered(true);
@@ -70,7 +70,7 @@ public class CircleLand extends DrawingPanel implements MouseListener, MouseMoti
         world.addKeyListener(world);
         world.addComponentListener(world);
         world.run();
-    }
+    }*/
     
     public CircleLand()
     {

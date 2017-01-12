@@ -32,6 +32,7 @@ public class Portal extends CircleItem {
     }
     public void draw(Graphics2D graphics, int x, int y)
     {
+        /*
         graphics.setColor(Color.BLACK);
         graphics.fillOval((int)(x - (size+4)/ 2), (int)(y - (size+4) / 2),
             (int)size+4, (int)size+4);
@@ -40,6 +41,7 @@ public class Portal extends CircleItem {
             (int)size, (int)size);
         graphics.setColor(Color.BLACK);
         graphics.drawString(name, (int)position.x, (int)position.y);
+        */
     }
     public void drawDetails(Graphics2D graphics, int x, int y){
         graphics.setColor(Color.WHITE);

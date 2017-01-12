@@ -5,12 +5,14 @@
  */
 package MainScreens;
 
-import javax.swing.JPanel;
+import java.awt.Graphics2D;
 
 /**
  *
  * @author Jeff
  */
-public class MultiplayerScreen  extends JPanel{
-    
+public abstract class GameState {
+    public abstract void handleInput(InputStore input);
+    public abstract void update(long delta);
+    public abstract void draw(Graphics2D graphics);
 }
