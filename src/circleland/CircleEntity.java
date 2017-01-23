@@ -339,6 +339,7 @@ public class CircleEntity extends CircleObject{
         if(plusMin > range) plusMin = range;
         minDamage += plusMin;
     }
+    
     public void draw(Graphics2D graphics)
     {
         if(health <= 0)

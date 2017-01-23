@@ -57,8 +57,8 @@ public class SummonedSkeleton extends CircleSummoned{
         level = 1;
         baseMaxHealth = baseMaxHealth * level;
         health = maxHealth;
-        baseAttackSpeed = BASE_ATTACKSPEED - level * 20;
-        baseCastSpeed = BASE_CASTSPEED - level * 20;
+        baseAttackSpeed = 0;
+        baseCastSpeed = 0;
         baseMoveSpeed = BASE_MOVESPEED  + level * 10;
         baseAttackDamage = BASE_ATTACK_DAMAGE + level * 20;
         baseAttackDefense = BASE_ATTACK_DEFENSE + level * 15;
@@ -88,8 +88,8 @@ public class SummonedSkeleton extends CircleSummoned{
         level = 7;
         baseMaxHealth = baseMaxHealth * level;
         health = maxHealth;
-        baseAttackSpeed = BASE_ATTACKSPEED - level * 20;
-        baseCastSpeed = BASE_CASTSPEED - level * 20;
+        baseAttackSpeed = 0;
+        baseCastSpeed = 0;
         baseMoveSpeed = BASE_MOVESPEED  + level * 10;
         baseAttackDamage = BASE_ATTACK_DAMAGE + level * 20;
         baseAttackDefense = BASE_ATTACK_DEFENSE + level * 15;

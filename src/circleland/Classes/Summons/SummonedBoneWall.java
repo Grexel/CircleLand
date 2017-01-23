@@ -29,8 +29,8 @@ public class SummonedBoneWall extends CircleSummoned{
     public static final int BASE_ATTACK_DEFENSE= 2;
     public static final int BASE_MAGIC_DEFENSE= 1;
     public static final int BASE_PRECISION = 1;
-    public static final int BASE_ATTACKSPEED= 1000;
-    public static final int BASE_CASTSPEED= 1000;
+    public static final int BASE_ATTACKSPEED= 0;
+    public static final int BASE_CASTSPEED= 0;
     public static final int BASE_MOVESPEED= 80;
         
     private static final Color BONE_COLOR = Color.BLACK;
@@ -68,8 +68,8 @@ public class SummonedBoneWall extends CircleSummoned{
         level = 1;
         baseMaxHealth = 50 + skillLevel *20;
         health = maxHealth;
-        baseAttackSpeed = BASE_ATTACKSPEED - level * 20;
-        baseCastSpeed = BASE_CASTSPEED - level * 20;
+        baseAttackSpeed = 0;
+        baseCastSpeed = 0;
         baseMoveSpeed = BASE_MOVESPEED  + level * 10;
         baseAttackDamage = BASE_ATTACK_DAMAGE + level * 20;
         baseAttackDefense = BASE_ATTACK_DEFENSE + level * 15;
@@ -101,8 +101,8 @@ public class SummonedBoneWall extends CircleSummoned{
         level = 1;
         baseMaxHealth = baseMaxHealth * level;
         health = maxHealth;
-        baseAttackSpeed = BASE_ATTACKSPEED - level * 20;
-        baseCastSpeed = BASE_CASTSPEED - level * 20;
+        baseAttackSpeed = 0;
+        baseCastSpeed = 0;
         baseMoveSpeed = BASE_MOVESPEED  + level * 10;
         baseAttackDamage = BASE_ATTACK_DAMAGE + level * 20;
         baseAttackDefense = BASE_ATTACK_DEFENSE + level * 15;

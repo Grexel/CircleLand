@@ -32,8 +32,8 @@ public class CircleLandState extends GameState{
     private CircleMouse mouse;
     private CircleClass player;
     
-    public CircleLandState(){
-        
+    public CircleLandState(GameStateManager gsm){
+        super(gsm);
         //initializeSounds
         SoundManager.initializeSoundManager();
         MapLoader mL = new MapLoader();
@@ -42,6 +42,22 @@ public class CircleLandState extends GameState{
         
         player = new WarriorCircle();
         //player = new NecromancerCircle();
+        camera = new Camera(0,0,PANEL_WIDTH,PANEL_HEIGHT, player);
+        mouse = new CircleMouse(camera,player);
+        camera.mouse(mouse);
+        
+        currentMap = mL.enterMap("images/Act1.xml", camera, mouse, player);
+        currentMap.name("Act1");
+    }
+    public CircleLandState(GameStateManager gsm, CircleClass circle){
+        super(gsm);
+        //initializeSounds
+        SoundManager.initializeSoundManager();
+        MapLoader mL = new MapLoader();
+        //mL.loadMap("images/Act1MapData.xml");
+        
+        
+        player = circle;
         camera = new Camera(0,0,PANEL_WIDTH,PANEL_HEIGHT, player);
         mouse = new CircleMouse(camera,player);
         camera.mouse(mouse);
@@ -120,7 +136,7 @@ public class CircleLandState extends GameState{
         mouse.position().x = input.getMousePosition().x;
         mouse.position().y = input.getMousePosition().y;
         
-            input.endFrame();
+        input.endFrame();
     }
 
     @Override
@@ -147,6 +163,11 @@ public class CircleLandState extends GameState{
     public void draw(Graphics2D graphics) {
         
         currentMap.draw(graphics);
+    }
+
+    @Override
+    public void close() {
+        
     }
     
 }

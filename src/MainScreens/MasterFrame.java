@@ -69,7 +69,8 @@ public class MasterFrame extends JFrame implements MouseListener, MouseMotionLis
         setVisible(true);
         
         gameStateManager = new GameStateManager();
-        gameStateManager.pushState(new CircleLandState());
+        gameStateManager.pushState(new PlayerSelectState(gameStateManager));
+        //gameStateManager.pushState(new CircleLandState(gameStateManager));
         inputStore = new InputStore();
     }
     public static void main(String[] args) {
@@ -219,7 +220,7 @@ public class MasterFrame extends JFrame implements MouseListener, MouseMotionLis
         if(e.getKeyCode() == KeyEvent.VK_SPACE)
             inputStore.setSpacePressed(true);
         if(e.getKeyCode() == KeyEvent.VK_ESCAPE)
-            gameStateManager.quit();
+            gameStateManager.popState();
     }
     /** Handle the key-released event from the text field. */
     public void keyReleased(KeyEvent e) {

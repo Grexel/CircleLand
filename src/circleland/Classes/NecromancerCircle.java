@@ -24,7 +24,7 @@ import java.util.ArrayList;
  */
 public class NecromancerCircle extends CircleClass{
     public NecromancerCircle(){
-        super();
+        super("Necromancer");
         color = Color.BLACK;
         outlineColor = Color.GRAY;
         addAllSkills();

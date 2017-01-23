@@ -161,7 +161,7 @@ public class CircleMap {
             }
         }
         
-        player = new CircleClass();
+        player = new CircleClass("Warrior");
         camera = new Camera(0,0,w,h, player);
         mouse = new CircleMouse(camera,player);
         mapBounds = new Rectangle(0,0,2000,2000);
@@ -370,7 +370,7 @@ public class CircleMap {
               for(int x = 0; x < tileArray.length; x++){
                   for(int y = 0; y < tileArray[0].length; y++){
                       Rectangle r = new Rectangle(x*tileWidth,y*tileHeight,tileWidth,tileHeight);
-                      //if(camera.intersects(r))
+                      if(camera.intersects(r))
                           spriteSheet.draw(graphics, x * tileWidth,y * tileHeight, tileArray[x][y][z]);
                   }
               }

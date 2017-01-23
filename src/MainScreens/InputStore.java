@@ -32,6 +32,7 @@ public class InputStore {
         lastKPressed = kPressed;
         lastPPressed = pPressed;
         lastLeftMouseDown = leftMouseDown;
+        mouseWheelScrolled = 0;
     }
     public boolean isLeftMouseDown() {
         return leftMouseDown;

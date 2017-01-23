@@ -28,7 +28,7 @@ import java.util.ArrayList;
  */
 public class WarriorCircle extends CircleClass{
     public WarriorCircle(){
-        super();
+        super("Warrior");
         LootGenerator lG = new LootGenerator();
         baseStrength = 30;
         baseDexterity = 20;

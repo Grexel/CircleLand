@@ -86,8 +86,8 @@ public class MonsterGenerator {
         monster.baseAttackDefense = HoundMonster.BASE_ATTACK_DEFENSE + level*2;
         monster.baseMagicDefense = HoundMonster.BASE_MAGIC_DEFENSE + level*2;
         monster.basePrecision = HoundMonster.BASE_PRECISION + level*1;
-        monster.baseAttackSpeed = HoundMonster.BASE_ATTACKSPEED + level*1;
-        monster.baseCastSpeed = HoundMonster.BASE_CASTSPEED + level*1;
+        monster.baseAttackSpeed = 0;
+        monster.baseCastSpeed = 0;
         monster.baseMoveSpeed = HoundMonster.BASE_MOVESPEED + level*1;
         
         CircleWeapon cW = (CircleWeapon)weaponGenerator.getItem("Beaver Jaw");
@@ -120,8 +120,8 @@ public class MonsterGenerator {
         monster.baseAttackDefense = FlyMonster.BASE_ATTACK_DEFENSE + level*2;
         monster.baseMagicDefense = FlyMonster.BASE_MAGIC_DEFENSE + level*2;
         monster.basePrecision = FlyMonster.BASE_PRECISION + level*1;
-        monster.baseAttackSpeed = FlyMonster.BASE_ATTACKSPEED + level*1;
-        monster.baseCastSpeed = FlyMonster.BASE_CASTSPEED + level*1;
+        monster.baseAttackSpeed = 0;
+        monster.baseCastSpeed = 0;
         monster.baseMoveSpeed = FlyMonster.BASE_MOVESPEED + level*1;
         
         CircleWeapon cW = (CircleWeapon)weaponGenerator.getItem("Rat Jaw");
@@ -153,8 +153,8 @@ public class MonsterGenerator {
         monster.baseAttackDefense = InchWormMonster.BASE_ATTACK_DEFENSE + level*2;
         monster.baseMagicDefense = InchWormMonster.BASE_MAGIC_DEFENSE + level*2;
         monster.basePrecision = InchWormMonster.BASE_PRECISION + level*1;
-        monster.baseAttackSpeed = InchWormMonster.BASE_ATTACKSPEED + level*1;
-        monster.baseCastSpeed = InchWormMonster.BASE_CASTSPEED + level*1;
+        monster.baseAttackSpeed = 0;
+        monster.baseCastSpeed = 0;
         monster.baseMoveSpeed = InchWormMonster.BASE_MOVESPEED + level*1;
         
         CircleWeapon cW = (CircleWeapon)weaponGenerator.getItem("Foil");
@@ -187,8 +187,8 @@ public class MonsterGenerator {
         monster.baseAttackDefense = SkeletonRangerMonster.BASE_ATTACK_DEFENSE + level*2;
         monster.baseMagicDefense = SkeletonRangerMonster.BASE_MAGIC_DEFENSE + level*2;
         monster.basePrecision = SkeletonRangerMonster.BASE_PRECISION + level*1;
-        monster.baseAttackSpeed = SkeletonRangerMonster.BASE_ATTACKSPEED + level*1;
-        monster.baseCastSpeed = SkeletonRangerMonster.BASE_CASTSPEED + level*1;
+        monster.baseAttackSpeed = 0;
+        monster.baseCastSpeed = 0;
         monster.baseMoveSpeed = SkeletonRangerMonster.BASE_MOVESPEED + level*1;
         
         CircleWeapon cW = (CircleWeapon)weaponGenerator.getItem("Flint Pistol");
@@ -220,8 +220,8 @@ public class MonsterGenerator {
         monster.baseAttackDefense = SkeletonSwordMonster.BASE_ATTACK_DEFENSE + level*2;
         monster.baseMagicDefense = SkeletonSwordMonster.BASE_MAGIC_DEFENSE + level*2;
         monster.basePrecision = SkeletonSwordMonster.BASE_PRECISION + level*1;
-        monster.baseAttackSpeed = SkeletonSwordMonster.BASE_ATTACKSPEED + level*1;
-        monster.baseCastSpeed = SkeletonSwordMonster.BASE_CASTSPEED + level*1;
+        monster.baseAttackSpeed = 0;
+        monster.baseCastSpeed = 0;
         monster.baseMoveSpeed = SkeletonSwordMonster.BASE_MOVESPEED + level*1;
         
         CircleWeapon cW = (CircleWeapon)weaponGenerator.getItem("Foil");
@@ -255,8 +255,8 @@ public class MonsterGenerator {
         monster.baseAttackDefense = TurretMonster.BASE_ATTACK_DEFENSE + level*2;
         monster.baseMagicDefense = TurretMonster.BASE_MAGIC_DEFENSE + level*2;
         monster.basePrecision = TurretMonster.BASE_PRECISION + level*1;
-        monster.baseAttackSpeed = TurretMonster.BASE_ATTACKSPEED + level*1;
-        monster.baseCastSpeed = TurretMonster.BASE_CASTSPEED + level*1;
+        monster.baseAttackSpeed = 0;
+        monster.baseCastSpeed = 0;
         monster.baseMoveSpeed = TurretMonster.BASE_MOVESPEED + level*1;
         
         CircleWeapon cW = (CircleWeapon)weaponGenerator.getItem("Flint Pistol");
@@ -290,8 +290,8 @@ public class MonsterGenerator {
         monster.baseAttackDefense = CadaverMonster.BASE_ATTACK_DEFENSE + level*2;
         monster.baseMagicDefense = CadaverMonster.BASE_MAGIC_DEFENSE + level*2;
         monster.basePrecision = CadaverMonster.BASE_PRECISION + level*1;
-        monster.baseAttackSpeed = CadaverMonster.BASE_ATTACKSPEED + level*1;
-        monster.baseCastSpeed = CadaverMonster.BASE_CASTSPEED + level*1;
+        monster.baseAttackSpeed = 0;
+        monster.baseCastSpeed = 0;
         monster.baseMoveSpeed = CadaverMonster.BASE_MOVESPEED + level*1;
         
         CircleWeapon cW = (CircleWeapon)weaponGenerator.getItem("Mouse Jaw");
@@ -325,8 +325,8 @@ public class MonsterGenerator {
         monster.baseAttackDefense = RedImpSpawner.BASE_ATTACK_DEFENSE + level*2;
         monster.baseMagicDefense = RedImpSpawner.BASE_MAGIC_DEFENSE + level*2;
         monster.basePrecision = RedImpSpawner.BASE_PRECISION + level*1;
-        monster.baseAttackSpeed = RedImpSpawner.BASE_ATTACKSPEED + level*1;
-        monster.baseCastSpeed = RedImpSpawner.BASE_CASTSPEED + level*1;
+        monster.baseAttackSpeed = 0;
+        monster.baseCastSpeed = 0;
         monster.baseMoveSpeed = RedImpSpawner.BASE_MOVESPEED + level*1;
         
         CircleWeapon cW = (CircleWeapon)weaponGenerator.getItem("Mouse Jaw");

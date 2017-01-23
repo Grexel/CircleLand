@@ -23,14 +23,18 @@ import java.util.Random;
  */
 public class CircleClass extends CircleEntity{
     private static final Random rand = new Random();
+    private String className;
+    public String className(){return className;}
+    
     private QuestList quests;
     public QuestList quests(){return quests;}
     protected ArrayList<CircleSkill> allSkills;
     public ArrayList<CircleSkill> allSkills(){return allSkills;}
     protected ArrayList<CircleSummoned> summoned;
     public ArrayList<CircleSummoned> summoned(){return summoned;}
-    public CircleClass(){
+    public CircleClass(String className){
         super();
+        this.className = className;
         quests = new QuestList();
         allSkills = new ArrayList<>();
         summoned = new ArrayList<>();
