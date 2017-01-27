@@ -29,13 +29,14 @@ import java.util.ArrayList;
 public class WarriorCircle extends CircleClass{
     public WarriorCircle(){
         super("Warrior");
-        LootGenerator lG = new LootGenerator();
-        baseStrength = 30;
-        baseDexterity = 20;
-        baseMagic = 10;
-        baseFortitude = 20;
-        statPoints = 100;
+        baseStrength = 10;
+        baseDexterity = 5;
+        baseMagic = 5;
+        baseFortitude = 10;
+        statPoints = 5;
         color = Color.GRAY;
+        outlineColor = Color.BLACK;
+        
         addAllSkills();
         equippedSkill = new StunSkill();
         skills.add(new BashSkill());
@@ -46,6 +47,7 @@ public class WarriorCircle extends CircleClass{
         skills.add(new FortitudeSkill());
         skills.add(new MeleeMasterySkill());
         skills.add(new MetalSkinSkill());
+        LootGenerator lG = new LootGenerator();
         equippedWeapon = (CircleWeapon)lG.getItem("Sabre");
     }
     public void addAllSkills(){

@@ -5,6 +5,7 @@
  */
 package circleland.Skills.WarriorSkills;
 
+import circleland.CircleAttack;
 import circleland.CircleEntity;
 import circleland.CirclePassiveSkill;
 import circleland.CircleSkill;
@@ -12,6 +13,7 @@ import static circleland.Skills.WarriorSkills.BashSkill.CENTER_COLOR;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.util.ArrayList;
 
 /**
  *
@@ -24,6 +26,7 @@ public class MetalSkinSkill extends CirclePassiveSkill{
         super();
         isActive = false;
         name = "MetalSkin";
+        skillLevel = 10;
     }
 
     @Override
@@ -41,4 +44,6 @@ public class MetalSkinSkill extends CirclePassiveSkill{
         graphics.drawLine(x, y-(int)size/4, x, y+(int)size/4);
         graphics.drawLine(x+(int)size/4, y, x-(int)size/4, y);
     }
+
+
 }

@@ -44,10 +44,16 @@ public class BoneShieldSkill extends CircleSkill {
         double velY = owner.moveSpeed() * 2 * Math.sin(owner.heading());
         double damageReduction = 0.20 + skillLevel * 0.03;
         castLife = 60000 + skillLevel*10000;
-        BoneShieldSkillAttack bA = new BoneShieldSkillAttack(owner,castLife,owner.magicDamage(),
+        int dmg = randomizeDamage(owner);
+        BoneShieldSkillAttack bA = new BoneShieldSkillAttack(owner,castLife,dmg,
             owner.position().x,owner.position().y,velX,velY,shieldSize,Color.BLACK,damageReduction);
         attacks.add(bA);
         boneShields.add(bA);
+    }
+    @Override
+    public void addBonus(CircleEntity circle) {
+        circle.minMagicDamage(1);
+        circle.maxMagicDamage(this.skillLevel);
     }
     public void draw(Graphics2D graphics, int x, int y)
     {

@@ -5,8 +5,13 @@
  */
 package circleland.Loot;
 
+import circleland.Affixes.*;
+import circleland.CircleAffix;
 import java.awt.Color;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
@@ -61,6 +66,9 @@ public class DiagramLoader {
                         String weaponType = elem.getAttribute("type");
                         String name = elem.getElementsByTagName("name")
                                 .item(0).getTextContent();
+                        int rarity = Integer.parseInt(
+                            elem.getElementsByTagName("rarity")
+                                    .item(0).getTextContent());
                         int size = Integer.parseInt(
                             elem.getElementsByTagName("size")
                                     .item(0).getTextContent());
@@ -84,10 +92,26 @@ public class DiagramLoader {
                         int pierce = Integer.parseInt(
                             elem.getElementsByTagName("pierce")
                                     .item(0).getTextContent());
+                        NodeList affixList = elem.getElementsByTagName("affix");
+                        List<CircleAffix> affixes = new ArrayList<>();
+                        if(affixList.getLength() > 0){
+                            for (int k = 0; k < affixList.getLength(); k++) {
+                                Node aNode = affixList.item(k);
+                                if (aNode.getNodeType() == Node.ELEMENT_NODE) {
+                                    Element aElem = (Element) aNode;
+                                    String affixName = elem.getAttribute("name");
+                                    int minVal = Integer.parseInt(
+                                            elem.getAttribute("minValue")); 
+                                    int maxVal = Integer.parseInt(
+                                            elem.getAttribute("maxValue"));
+                                    affixes.add(createAffix(affixName,minVal,maxVal));
+                                }
+                            }
+                        }
                         //create diagram and add to list
-                        WeaponDiagram diag = new WeaponDiagram(name, itemLevel,
+                        WeaponDiagram diag = new WeaponDiagram(name, rarity, itemLevel,
                                 weaponType, size, moveSpeed, attackSpeed,
-                                attackLife, color, minDamage, maxDamage, pierce);
+                                attackLife, color, minDamage, maxDamage, pierce,affixes);
                         diagramList.addDiagram(diag);
                         System.out.println("weapon added");
                     }
@@ -100,6 +124,9 @@ public class DiagramLoader {
                         String armorType = elem.getAttribute("type");
                         String name = elem.getElementsByTagName("name")
                                 .item(0).getTextContent();
+                        int rarity = Integer.parseInt(
+                            elem.getElementsByTagName("rarity")
+                                    .item(0).getTextContent());
                         Color color = Color.decode(elem.getElementsByTagName("color")
                                     .item(0).getTextContent());
                         int minDefense = Integer.parseInt(
@@ -108,9 +135,26 @@ public class DiagramLoader {
                         int maxDefense = Integer.parseInt(
                             elem.getElementsByTagName("maxDefense")
                                     .item(0).getTextContent());
+                        //Affixes
+                        NodeList affixList = elem.getElementsByTagName("affix");
+                        List<CircleAffix> affixes = new ArrayList<>();
+                        if(affixList.getLength() > 0){
+                            for (int k = 0; k < affixList.getLength(); k++) {
+                                Node aNode = affixList.item(k);
+                                if (aNode.getNodeType() == Node.ELEMENT_NODE) {
+                                    Element aElem = (Element) aNode;
+                                    String affixName = elem.getAttribute("name");
+                                    int minVal = Integer.parseInt(
+                                            elem.getAttribute("minValue")); 
+                                    int maxVal = Integer.parseInt(
+                                            elem.getAttribute("maxValue"));
+                                    affixes.add(createAffix(affixName,minVal,maxVal));
+                                }
+                            }
+                        }
                         //create diagram and add to list
-                        ArmorDiagram diag = new ArmorDiagram(name, itemLevel, 
-                                armorType, color, minDefense, maxDefense);
+                        ArmorDiagram diag = new ArmorDiagram(name,rarity, itemLevel, 
+                                armorType, color, minDefense, maxDefense,affixes);
                         diagramList.addDiagram(diag);
                         System.out.println("armor added");
                     }
@@ -121,5 +165,37 @@ public class DiagramLoader {
             System.out.println(e.getMessage());
         }
         return diagramList;
+    }
+    public static CircleAffix createAffix(String name, int min, int max){
+        CircleAffix affix;
+        if(name.equalsIgnoreCase("Strength")){
+            affix = new StrengthAffix(1);
+            int value = new Random().nextInt(max - min + 1) + min;
+        }
+        else if(name.equalsIgnoreCase("Armor")){
+            affix = new ArmorAffix(1);
+            int value = new Random().nextInt(max - min + 1) + min;
+        }
+        else if(name.equalsIgnoreCase("Dexterity")){
+            affix = new DexterityAffix(1);
+            int value = new Random().nextInt(max - min + 1) + min;
+        }
+        else if(name.equalsIgnoreCase("Fortitude")){
+            affix = new FortitudeAffix(1);
+            int value = new Random().nextInt(max - min + 1) + min;
+        }
+        else if(name.equalsIgnoreCase("Magic")){
+            affix = new MagicAffix(1);
+            int value = new Random().nextInt(max - min + 1) + min;
+        }
+        else if(name.equalsIgnoreCase("MinDamage")){
+            affix = new MinDamageAffix(1);
+            int value = new Random().nextInt(max - min + 1) + min;
+        }
+        else{
+            affix = new StrengthAffix(1);
+            int value = new Random().nextInt(max - min + 1) + min;            
+        }
+        return affix;
     }
 }

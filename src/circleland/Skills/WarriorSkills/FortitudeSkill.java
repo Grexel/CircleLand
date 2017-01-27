@@ -22,6 +22,7 @@ public class FortitudeSkill extends CirclePassiveSkill{
         super();
         isActive = false;
         name = "Fortitude";
+        skillLevel = 10;
     }
 
     @Override

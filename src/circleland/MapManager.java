@@ -64,6 +64,7 @@ public class MapManager {
                         }
                     }
                 }
+                map.player().returnSummoned();
                 return map;
             }
         }
@@ -87,6 +88,7 @@ public class MapManager {
             loadedMap.camera(cM.camera());
             loadedMap.name(p.name());
             MapGenerator.randomEnemies(loadedMap);
+            loadedMap.player().returnSummoned();
             return loadedMap;
         }
         //else generate random map
@@ -107,6 +109,7 @@ public class MapManager {
             }
         }
         cM.switchToMap(null);
+        newMap.player().returnSummoned();
         return newMap;
     }
 }

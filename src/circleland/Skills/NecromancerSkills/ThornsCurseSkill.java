@@ -50,5 +50,10 @@ public class ThornsCurseSkill extends CircleSkill {
         graphics.drawLine(x+(int)size/4, y, x-(int)size/4, y);
     }
     
+    @Override
+    public void addBonus(CircleEntity circle) {
+        circle.minMagicDamage(1);
+        circle.maxMagicDamage(this.skillLevel);
+    }
     
 }

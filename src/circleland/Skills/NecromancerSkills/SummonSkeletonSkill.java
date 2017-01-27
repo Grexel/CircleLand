@@ -59,4 +59,9 @@ public class SummonSkeletonSkill extends CircleSkill{
         graphics.drawLine(x+(int)size/4, y+(int)size/4, x-(int)size/4, y+(int)size/4);
         
     }
+    @Override
+    public void addBonus(CircleEntity circle) {
+        circle.minMagicDamage(1);
+        circle.maxMagicDamage(this.skillLevel);
+    }
 }

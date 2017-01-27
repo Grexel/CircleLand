@@ -41,6 +41,11 @@ public class SummonSkeletonArcherSkill extends CircleSkill{
         
         attacks.add(bA);
     }
+    @Override
+    public void addBonus(CircleEntity circle) {
+        circle.minMagicDamage(1);
+        circle.maxMagicDamage(this.skillLevel);
+    }
     public void draw(Graphics2D graphics, int x, int y)
     {
         graphics.setColor(Color.WHITE);

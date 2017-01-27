@@ -1,0 +1,5 @@
+CircleLoader add save/load items for character
+Take item, create diagram, use diagram to code xml for item.
+add rarity/affixes to weapons/armor diagrams
+Remove AttackDamage and MagicDamage, 
+replace with min-max AttackDamage and min-max MagicDamage

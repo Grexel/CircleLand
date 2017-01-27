@@ -3,6 +3,7 @@
     <!-- Weapons -->
     <weapon type="Rapier" level="3">
         <name>Sabre</name>
+        <rarity>1</rarity>
         <size>100</size>
         <moveSpeed>200</moveSpeed>
         <attackSpeed>500</attackSpeed>
@@ -14,6 +15,7 @@
     </weapon>
     <weapon type="Rapier" level="7">
         <name>Foil</name>
+        <rarity>1</rarity>
         <size>100</size>
         <moveSpeed>200</moveSpeed>
         <attackSpeed>500</attackSpeed>
@@ -25,6 +27,7 @@
     </weapon>
     <weapon type="Rapier" level="12">
         <name>Epée</name>
+        <rarity>1</rarity>
         <size>100</size>
         <moveSpeed>200</moveSpeed>
         <attackSpeed>500</attackSpeed>
@@ -36,6 +39,7 @@
     </weapon>
     <weapon type="Rapier" level="16">
         <name>Estoc</name>
+        <rarity>1</rarity>
         <size>100</size>
         <moveSpeed>200</moveSpeed>
         <attackSpeed>500</attackSpeed>
@@ -47,6 +51,7 @@
     </weapon>
     <weapon type="Rapier" level="21">
         <name>Court Sword Rapier</name>
+        <rarity>1</rarity>
         <size>40</size>
         <moveSpeed>200</moveSpeed>
         <attackSpeed>300</attackSpeed>
@@ -58,6 +63,7 @@
     </weapon>
     <weapon type="Rapier" level="21">
         <name>Verdun</name>
+        <rarity>1</rarity>
         <size>200</size>
         <moveSpeed>500</moveSpeed>
         <attackSpeed>750</attackSpeed>
@@ -69,6 +75,7 @@
     </weapon>
     <weapon type="Bite" level="1">
         <name>Mouse Jaw</name>
+        <rarity>1</rarity>
         <size>40</size>
         <moveSpeed>100</moveSpeed>
         <attackSpeed>400</attackSpeed>
@@ -80,6 +87,7 @@
     </weapon>
     <weapon type="Bite" level="5">
         <name>Rat Jaw</name>
+        <rarity>1</rarity>
         <size>40</size>
         <moveSpeed>100</moveSpeed>
         <attackSpeed>400</attackSpeed>
@@ -91,6 +99,7 @@
     </weapon>
     <weapon type="Bite" level="9">
         <name>Beaver Jaw</name>
+        <rarity>1</rarity>
         <size>60</size>
         <moveSpeed>100</moveSpeed>
         <attackSpeed>400</attackSpeed>
@@ -102,6 +111,7 @@
     </weapon>
     <weapon type="Bite" level="12">
         <name>Wolf Jaw</name>
+        <rarity>1</rarity>
         <size>60</size>
         <moveSpeed>100</moveSpeed>
         <attackSpeed>400</attackSpeed>
@@ -113,6 +123,7 @@
     </weapon>
     <weapon type="Bite" level="16">
         <name>Shark Jaw</name>
+        <rarity>1</rarity>
         <size>60</size>
         <moveSpeed>100</moveSpeed>
         <attackSpeed>400</attackSpeed>
@@ -124,6 +135,7 @@
     </weapon>
     <weapon type="Bite" level="19">
         <name>Bear Jaw</name>
+        <rarity>1</rarity>
         <size>60</size>
         <moveSpeed>100</moveSpeed>
         <attackSpeed>400</attackSpeed>
@@ -135,6 +147,7 @@
     </weapon>
     <weapon type="Bite" level="22">
         <name>Hippo Jaw</name>
+        <rarity>1</rarity>
         <size>80</size>
         <moveSpeed>100</moveSpeed>
         <attackSpeed>400</attackSpeed>
@@ -146,6 +159,7 @@
     </weapon>
     <weapon type="Bite" level="25">
         <name>Alligator Jaw</name>
+        <rarity>1</rarity>
         <size>80</size>
         <moveSpeed>100</moveSpeed>
         <attackSpeed>400</attackSpeed>
@@ -157,6 +171,7 @@
     </weapon>
     <weapon type="Bullet" level="1">
         <name>Hand Cannon</name>
+        <rarity>1</rarity>
         <size>15</size>
         <moveSpeed>300</moveSpeed>
         <attackSpeed>750</attackSpeed>
@@ -168,6 +183,7 @@
     </weapon>
     <weapon type="Bullet" level="5">
         <name>Flint Pistol</name>
+        <rarity>1</rarity>
         <size>15</size>
         <moveSpeed>250</moveSpeed>
         <attackSpeed>650</attackSpeed>
@@ -179,6 +195,7 @@
     </weapon>
     <weapon type="Bullet" level="8">
         <name>Revolver</name>
+        <rarity>1</rarity>
         <size>15</size>
         <moveSpeed>400</moveSpeed>
         <attackSpeed>500</attackSpeed>
@@ -190,6 +207,7 @@
     </weapon>
     <weapon type="Bullet" level="12">
         <name>Glock</name>
+        <rarity>1</rarity>
         <size>18</size>
         <moveSpeed>300</moveSpeed>
         <attackSpeed>400</attackSpeed>
@@ -201,6 +219,7 @@
     </weapon>
     <weapon type="Bullet" level="17">
         <name>Colt .45</name>
+        <rarity>1</rarity>
         <size>20</size>
         <moveSpeed>400</moveSpeed>
         <attackSpeed>600</attackSpeed>
@@ -212,6 +231,7 @@
     </weapon>
     <weapon type="Bullet" level="21">
         <name>S&amp;W Shield</name>
+        <rarity>1</rarity>
         <size>20</size>
         <moveSpeed>400</moveSpeed>
         <attackSpeed>400</attackSpeed>
@@ -224,6 +244,7 @@
     <!-- Armor -->
     <armor type="armor" level="1">
         <name>Quilted Robe</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>5</minDefense>
         <maxDefense>10</maxDefense>
@@ -231,6 +252,7 @@
     </armor>
     <armor type="armor" level="3">
         <name>Leather Armor</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>12</minDefense>
         <maxDefense>24</maxDefense>
@@ -238,6 +260,7 @@
     </armor>
     <armor type="armor" level="6">
         <name>Hard Leather Armor</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>24</minDefense>
         <maxDefense>32</maxDefense>
@@ -245,6 +268,7 @@
     </armor>
     <armor type="armor" level="8">
         <name>Studded Leather Armor</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>36</minDefense>
         <maxDefense>50</maxDefense>
@@ -252,6 +276,7 @@
     </armor>
     <armor type="armor" level="11">
         <name>Ring Mail</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>52</minDefense>
         <maxDefense>64</maxDefense>
@@ -259,6 +284,7 @@
     </armor>
     <armor type="armor" level="13">
         <name>Scale Mail</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>66</minDefense>
         <maxDefense>78</maxDefense>
@@ -266,6 +292,7 @@
     </armor>
     <armor type="armor" level="15">
         <name>Chain Mail</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>76</minDefense>
         <maxDefense>82</maxDefense>
@@ -273,6 +300,7 @@
     </armor>
     <armor type="armor" level="17">
         <name>Breast Plate</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>76</minDefense>
         <maxDefense>94</maxDefense>
@@ -280,6 +308,7 @@
     </armor>
     <armor type="armor" level="19">
         <name>Splint Mail</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>95</minDefense>
         <maxDefense>106</maxDefense>
@@ -287,6 +316,7 @@
     </armor>
     <armor type="armor" level="21">
         <name>Plate Mail</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>102</minDefense>
         <maxDefense>124</maxDefense>
@@ -294,6 +324,7 @@
     </armor>
     <armor type="armor" level="23">
         <name>Field Plate</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>118</minDefense>
         <maxDefense>134</maxDefense>
@@ -301,6 +332,7 @@
     </armor>
     <armor type="armor" level="25">
         <name>Gothic Plate</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>127</minDefense>
         <maxDefense>145</maxDefense>
@@ -308,6 +340,7 @@
     </armor>
     <armor type="armor" level="27">
         <name>Light Plate</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>111</minDefense>
         <maxDefense>126</maxDefense>
@@ -315,6 +348,7 @@
     </armor>
     <armor type="armor" level="29">
         <name>Full Plate</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>165</minDefense>
         <maxDefense>182</maxDefense>
@@ -322,6 +356,7 @@
     </armor>
     <armor type="armor" level="31">
         <name>Crystal Plate</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>201</minDefense>
         <maxDefense>240</maxDefense>
@@ -330,6 +365,7 @@
     <!-- Helmets -->
     <armor type="helmet" level="1">
         <name>Shawl</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>1</minDefense>
         <maxDefense>3</maxDefense>
@@ -337,6 +373,7 @@
     </armor>
     <armor type="helmet" level="4">
         <name>Leather Cap</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>5</minDefense>
         <maxDefense>12</maxDefense>
@@ -344,6 +381,7 @@
     </armor>
     <armor type="helmet" level="9">
         <name>Skullcap</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>14</minDefense>
         <maxDefense>21</maxDefense>
@@ -351,6 +389,7 @@
     </armor>
     <armor type="helmet" level="13">
         <name>Helmet</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>25</minDefense>
         <maxDefense>32</maxDefense>
@@ -358,6 +397,7 @@
     </armor>
     <armor type="helmet" level="18">
         <name>Full Helm</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>34</minDefense>
         <maxDefense>41</maxDefense>
@@ -365,6 +405,7 @@
     </armor>
     <armor type="helmet" level="18">
         <name>Mask</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>34</minDefense>
         <maxDefense>41</maxDefense>
@@ -372,6 +413,7 @@
     </armor>
     <armor type="helmet" level="22">
         <name>Great Helm</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>43</minDefense>
         <maxDefense>52</maxDefense>
@@ -379,6 +421,7 @@
     </armor>
     <armor type="helmet" level="25">
         <name>Crown</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>48</minDefense>
         <maxDefense>59</maxDefense>
@@ -386,6 +429,7 @@
     </armor>
     <armor type="helmet" level="27">
         <name>Crystal Crown</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>61</minDefense>
         <maxDefense>73</maxDefense>
@@ -394,6 +438,7 @@
     <!-- Boots -->
     <armor type="boots" level="1">
         <name>Cloth Boots</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>1</minDefense>
         <maxDefense>3</maxDefense>
@@ -401,6 +446,7 @@
     </armor>
     <armor type="boots" level="4">
         <name>Leather Boots</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>4</minDefense>
         <maxDefense>9</maxDefense>
@@ -408,6 +454,7 @@
     </armor>
     <armor type="boots" level="9">
         <name>Heavy Leather Boots</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>10</minDefense>
         <maxDefense>14</maxDefense>
@@ -415,6 +462,7 @@
     </armor>
     <armor type="boots" level="13">
         <name>Chain Boots</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>16</minDefense>
         <maxDefense>21</maxDefense>
@@ -422,6 +470,7 @@
     </armor>
     <armor type="boots" level="18">
         <name>Plated Boots</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>22</minDefense>
         <maxDefense>27</maxDefense>
@@ -429,6 +478,7 @@
     </armor>
     <armor type="boots" level="22">
         <name>Greaves</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>28</minDefense>
         <maxDefense>34</maxDefense>
@@ -436,6 +486,7 @@
     </armor>
     <armor type="boots" level="27">
         <name>Crystal Greaves</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>35</minDefense>
         <maxDefense>41</maxDefense>
@@ -444,6 +495,7 @@
     <!-- Gloves -->    
     <armor type="gloves" level="1">
         <name>Cloth Bracers</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>1</minDefense>
         <maxDefense>3</maxDefense>
@@ -451,6 +503,7 @@
     </armor>
     <armor type="gloves" level="4">
         <name>Leather Bracers</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>5</minDefense>
         <maxDefense>9</maxDefense>
@@ -458,6 +511,7 @@
     </armor>
     <armor type="gloves" level="9">
         <name>Heavy Leather Bracers</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>10</minDefense>
         <maxDefense>16</maxDefense>
@@ -465,6 +519,7 @@
     </armor>
     <armor type="gloves" level="13">
         <name>Chain Gloves</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>17</minDefense>
         <maxDefense>22</maxDefense>
@@ -472,6 +527,7 @@
     </armor>
     <armor type="gloves" level="18">
         <name>Light Gauntlets</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>23</minDefense>
         <maxDefense>28</maxDefense>
@@ -479,6 +535,7 @@
     </armor>
     <armor type="gloves" level="22">
         <name>Gauntlets</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>31</minDefense>
         <maxDefense>37</maxDefense>
@@ -486,6 +543,7 @@
     </armor>
     <armor type="gloves" level="27">
         <name>Prism Gauntlets</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>40</minDefense>
         <maxDefense>47</maxDefense>
@@ -494,6 +552,7 @@
     <!-- Rings --> <!-- Level 0 means always available to generate -->
     <armor type="ring" level="0">
         <name>Ring</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>0</minDefense>
         <maxDefense>0</maxDefense>
@@ -502,6 +561,7 @@
     <!-- Amulet --> <!-- Level 0 means always available to generate -->
     <armor type="amulet" level="0">
         <name>Amulet</name>
+        <rarity>1</rarity>
         <color>0x808080</color>
         <minDefense>0</minDefense>
         <maxDefense>0</maxDefense>

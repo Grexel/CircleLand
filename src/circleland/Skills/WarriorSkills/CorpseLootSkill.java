@@ -25,6 +25,7 @@ public class CorpseLootSkill extends CircleSkill{
     {
         super();
         name = "CorpseLoot";
+        skillLevel = 10;
     }
     public void attack(CircleEntity owner, ArrayList<CircleAttack> attacks)
     {
@@ -35,6 +36,12 @@ public class CorpseLootSkill extends CircleSkill{
             owner.position().x,owner.position().y,velX,velY,(int)(owner.size() + 8),Color.GRAY);
         
         attacks.add(bA);
+    }
+    
+    @Override
+    public void addBonus(CircleEntity circle) {
+        circle.minMagicDamage(1);
+        circle.maxMagicDamage(this.skillLevel);
     }
     public void draw(Graphics2D graphics, int x, int y)
     {

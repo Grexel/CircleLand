@@ -81,7 +81,7 @@ public class CharacterScreen extends RectangleObject{
         graphics.drawString("EXP: " + player.experience() + "/" + 
                 player.experienceToNextLevel(), (int)rect.x + 10, (int)rect().y + 50);
         graphics.drawString("Damage: " + player.minDamage() + " - " + player.maxDamage(), (int)rect.x + 10, (int)rect().y + 60);
-        graphics.drawString("MagicDamage: " + player.magicDamage(),(int)rect.x + 10,(int)rect().y + 70);
+        graphics.drawString("Magic Damage: " + player.minMagicDamage() + " - " + player.maxMagicDamage(), (int)rect.x + 10, (int)rect().y + 70);
         graphics.drawString("AttackDefense: " + player.attackDefense(),(int)rect.x +  10, (int)rect().y + 80);
         graphics.drawString("MagicDefense: " + player.magicDefense(),(int)rect.x + 10, (int)rect().y + 90);
         graphics.drawString("Precision: " + player.precision(), (int)rect.x + 10, (int)rect().y + 100);

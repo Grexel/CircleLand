@@ -26,13 +26,15 @@ public class TauntSkill extends CircleSkill {
         super();
         name = "Taunt";
         tauntSize = 200;
+        skillLevel = 10;
     }
     public void attack(CircleEntity owner, ArrayList<CircleAttack> attacks)
     {
         owner.mana(owner.mana() - manaCost);
         double velX = owner.moveSpeed() * 2 * Math.cos(owner.heading());
         double velY = owner.moveSpeed() * 2 * Math.sin(owner.heading());
-        TauntSkillAttack bA = new TauntSkillAttack(owner,castLife,owner.magicDamage(),
+        int dmg = randomizeDamage(owner);
+        TauntSkillAttack bA = new TauntSkillAttack(owner,castLife,dmg,
             owner.position().x,owner.position().y,velX,velY,tauntSize,Color.PINK);
         attacks.add(bA);
     }
@@ -44,6 +46,12 @@ public class TauntSkill extends CircleSkill {
         graphics.setColor(Color.PINK);
         graphics.fillOval((int)(x - 8), (int)(y - 8),
             (int)16, (int)16);
+    }
+
+    @Override
+    public void addBonus(CircleEntity circle) {
+        circle.minMagicDamage(1);
+        circle.maxMagicDamage(this.skillLevel);
     }
     
 }

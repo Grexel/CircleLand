@@ -5,6 +5,7 @@
  */
 package circleland;
 
+import static circleland.CircleWeapon.rand;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
  *
  * @author Jeff
  */
-public class CircleSkill extends CircleItem{
+public abstract class CircleSkill extends CircleItem{
     protected int manaCost;
     public int manaCost(){return manaCost;}
     public void manaCost(int m){manaCost = m;}
@@ -38,8 +39,20 @@ public class CircleSkill extends CircleItem{
         castLife = 500;
         isActive = true;
     }
-    public void attack(CircleEntity owner, ArrayList<CircleAttack> attackList){
+
+    /**
+     *
+     * @param owner
+     * @param attackList
+     */
+    public abstract void attack(CircleEntity owner, ArrayList<CircleAttack> attackList);
+    public int randomizeDamage(CircleEntity entity){
+        //get range, precision curves min up towards max
+        int min = entity.minMagicDamage();
+        int max = entity.maxMagicDamage();
+        return(max-min <= 0)? min : rand.nextInt(max-min + 1) + min;
     }
+    public abstract void addBonus(CircleEntity circle);
     @Override
     public void draw(Graphics2D graphics) {
     }
@@ -56,5 +69,4 @@ public class CircleSkill extends CircleItem{
         graphics.drawString("ManaCost: " + manaCost(), x - 190, y - 170);
         graphics.drawString("SkillLevel: " + skillLevel(), x-190, y-160);
     }
-    
 }

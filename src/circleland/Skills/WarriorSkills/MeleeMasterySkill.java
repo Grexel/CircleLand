@@ -22,6 +22,7 @@ public class MeleeMasterySkill extends CirclePassiveSkill{
         super();
         isActive = false;
         name = "MeleeMastery";
+        skillLevel = 10;
     }
 
     @Override

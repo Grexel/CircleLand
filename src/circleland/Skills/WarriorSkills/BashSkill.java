@@ -27,16 +27,24 @@ public class BashSkill extends CircleSkill{
         name = "Bash";
         castSpeed = 800;
         castLife = 250;
+        skillLevel = 10;
     }
     public void attack(CircleEntity owner, ArrayList<CircleAttack> attacks)
     {
         owner.mana(owner.mana() - manaCost);
         double velX = owner.moveSpeed() * 2 * Math.cos(owner.heading());
         double velY = owner.moveSpeed() * 2 * Math.sin(owner.heading());
-        BashSkillAttack bA = new BashSkillAttack(owner,castLife,owner.magicDamage(),
+        int dmg = randomizeDamage(owner);
+        BashSkillAttack bA = new BashSkillAttack(owner,castLife,dmg,
             owner.position().x,owner.position().y,velX,velY,(int)(owner.size() + 8),Color.GRAY);
         
         attacks.add(bA);
+    }
+    
+    @Override
+    public void addBonus(CircleEntity circle) {
+        circle.minMagicDamage(1);
+        circle.maxMagicDamage(this.skillLevel);
     }
     public void draw(Graphics2D graphics, int x, int y)
     {

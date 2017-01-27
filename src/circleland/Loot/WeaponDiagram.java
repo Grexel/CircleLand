@@ -5,10 +5,12 @@
  */
 package circleland.Loot;
 
+import circleland.CircleAffix;
 import circleland.CircleItem;
 import circleland.CircleWeapon;
 import circleland.Weapons.*;
 import java.awt.Color;
+import java.util.List;
 
 /**
  *
@@ -25,9 +27,12 @@ public class WeaponDiagram extends ItemDiagram{
     int minDamage;
     int maxDamage;
     int pierce;
+    List<CircleAffix> affixes;
 
-    public WeaponDiagram(String name, int itemLevel, String weaponType, int size, int moveSpeed, int attackSpeed, int attackLife, Color color, int minDamage, int maxDamage, int pierce) {
-        super(itemLevel, name);
+    public WeaponDiagram(String name, int rarity, int itemLevel, String weaponType,
+            int size, int moveSpeed, int attackSpeed, int attackLife, Color color,
+            int minDamage, int maxDamage, int pierce, List<CircleAffix> affixes) {
+        super(itemLevel, name, rarity);
         this.weaponType = weaponType;
         this.size = size;
         this.moveSpeed = moveSpeed;
@@ -37,6 +42,7 @@ public class WeaponDiagram extends ItemDiagram{
         this.minDamage = minDamage;
         this.maxDamage = maxDamage;
         this.pierce = pierce;
+        this.affixes = affixes;
     }
     
     @Override
@@ -81,5 +87,33 @@ public class WeaponDiagram extends ItemDiagram{
             weapon.maxDamage(maxDamage);
             weapon.piercing(pierce);
             return weapon;
+    }
+    @Override
+    public String codeItem(CircleItem item) {
+        if(item instanceof RapierWeapon){
+            
+        }
+        else if(item instanceof SwordWeapon){
+            
+        }
+        else if(item instanceof BiteWeapon){
+            
+        }
+        else if(item instanceof BulletWeapon){
+            
+        }
+        else if(item instanceof SplittingWeapon){
+            
+        }
+        else if(item instanceof NovaWeapon){
+            
+        }
+        else if(item instanceof BounceWeapon){
+            
+        }
+        else if(item instanceof BoomerangWeapon){
+            
+        }
+        return "";
     }
 }

@@ -8,15 +8,16 @@ package circleland;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Jeff
  */
 public abstract class CircleEquipment extends CircleItem{
-    protected ArrayList<CircleAffix> affixes;
-    public void affixes(ArrayList<CircleAffix> aff){affixes = aff;}
-    public ArrayList<CircleAffix> affixes(){return affixes;}
+    protected List<CircleAffix> affixes;
+    public void affixes(List<CircleAffix> aff){affixes = aff;}
+    public List<CircleAffix> affixes(){return affixes;}
     
     protected int itemLevel;
     public void itemLevel(int i){itemLevel = i;}

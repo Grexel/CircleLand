@@ -59,6 +59,8 @@ public class CircleEntity extends CircleObject{
     //Stats
     protected int strength, dexterity, magic, fortitude;
     protected int minDamage, maxDamage;
+    protected int minMagicDamage;
+    protected int maxMagicDamage;
     protected double maxHealth, health,healthRegeneration,maxMana,mana,manaRegeneration,
             attackSpeed,castSpeed,moveSpeed;
     protected int level, experience,experienceToNextLevel,
@@ -67,6 +69,7 @@ public class CircleEntity extends CircleObject{
     
     protected int baseStrength, baseDexterity, baseMagic, baseFortitude;
     protected int baseMinDamage, baseMaxDamage;
+    protected int baseMinMagicDamage, baseMaxMagicDamage;
     protected double baseMaxHealth,baseHealthRegeneration,baseMaxMana,baseManaRegeneration,
             baseMoveSpeed,baseAttackSpeed,baseCastSpeed;
     protected int baseAttackDamage,baseMagicDamage,baseAttackDefense,baseMagicDefense,
@@ -142,6 +145,8 @@ public class CircleEntity extends CircleObject{
         magicFind = 0.01;
         minDamage = 1;
         maxDamage = 1;
+        minMagicDamage = 1;
+        maxMagicDamage = 1;
         
         baseMaxHealth = 100;
         baseHealthRegeneration = 10;
@@ -158,6 +163,8 @@ public class CircleEntity extends CircleObject{
         baseMagicFind = 0.01;
         baseMinDamage = 1;
         baseMaxDamage = 1;
+        baseMinMagicDamage = 1;
+        baseMaxMagicDamage = 1;
         
         gold = 0;
         
@@ -268,6 +275,8 @@ public class CircleEntity extends CircleObject{
         magicFind = baseMagicFind;
         minDamage = baseMinDamage;
         maxDamage = baseMaxDamage;
+        minMagicDamage = baseMinMagicDamage;
+        maxMagicDamage = baseMaxMagicDamage;
         strength = baseStrength;
         dexterity = baseDexterity;
         magic = baseMagic;
@@ -275,6 +284,7 @@ public class CircleEntity extends CircleObject{
         
         //add item stats;
         if(equippedWeapon != null)equippedWeapon.addBonus(this);
+        if(equippedSkill != null)equippedSkill.addBonus(this);
         if(equippedArmor != null)equippedArmor.addBonus(this);
         if(equippedHelmet != null)equippedHelmet.addBonus(this);
         if(equippedGloves != null)equippedGloves.addBonus(this);
@@ -316,6 +326,7 @@ public class CircleEntity extends CircleObject{
                 ((CirclePassiveSkill)skill).addBonus(this);
             }
         }
+        
         //stats should be fully calculated, add stat bonuses to character
         minDamage += strength/5;
         maxDamage += strength;
@@ -329,10 +340,12 @@ public class CircleEntity extends CircleObject{
         manaRegeneration += magic * 0.2;
         magicDefense += magic * 2;
         
+        minMagicDamage *= 1.0+(magic/100.0);
+        maxMagicDamage *= 1.0+(magic/100.0*2);
+        
         maxHealth += fortitude * 4;
         healthRegeneration += fortitude * 0.2;
         attackDefense += fortitude * 2;
-        
         //precision needs to curve min damage up
         int range = maxDamage - minDamage;
         int plusMin = (int)(range * (precision/100.0));
@@ -675,6 +688,11 @@ public class CircleEntity extends CircleObject{
     //GOLD :}
     public void gold(int m){gold = m;}
     public int gold(){ return gold;}
+
+    public int minMagicDamage() {return minMagicDamage;}
+    public void minMagicDamage(int minMagicDamage) {this.minMagicDamage = minMagicDamage;}
+    public int maxMagicDamage() {return maxMagicDamage;}
+    public void maxMagicDamage(int maxMagicDamage) {this.maxMagicDamage = maxMagicDamage;}
 }
 
 

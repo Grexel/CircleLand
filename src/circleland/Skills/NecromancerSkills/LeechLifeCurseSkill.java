@@ -39,6 +39,11 @@ public class LeechLifeCurseSkill extends CircleSkill {
             owner.aim().x,owner.aim().y,velX,velY,(int)curseSize,CURSEFIELD_COLOR,skillLevel);
         attacks.add(bA);
     }
+    @Override
+    public void addBonus(CircleEntity circle) {
+        circle.minMagicDamage(1);
+        circle.maxMagicDamage(this.skillLevel);
+    }
     public void draw(Graphics2D graphics, int x, int y)
     {
         graphics.setStroke(new BasicStroke(4));

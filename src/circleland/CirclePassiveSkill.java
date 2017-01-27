@@ -5,6 +5,8 @@
  */
 package circleland;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Jeff
@@ -13,5 +15,9 @@ public abstract class CirclePassiveSkill extends CircleSkill {
     public CirclePassiveSkill(){
         super();
     }
-    public abstract void addBonus(CircleEntity owner);
+    
+    @Override
+    public void attack(CircleEntity owner, ArrayList<CircleAttack> attackList){
+        //no use for attacks in passive skills
+    }
 }

@@ -25,13 +25,15 @@ public class StunSkill extends CircleSkill {
     {
         super();
         name = "Stun";
+        skillLevel = 10;
     }
     public void attack(CircleEntity owner, ArrayList<CircleAttack> attacks)
     {
         owner.mana(owner.mana() - manaCost);
         double velX = owner.moveSpeed() * 2 * Math.cos(owner.heading());
         double velY = owner.moveSpeed() * 2 * Math.sin(owner.heading());
-        StunSkillAttack bA = new StunSkillAttack(owner,castLife,owner.magicDamage(),
+        int dmg = randomizeDamage(owner);
+        StunSkillAttack bA = new StunSkillAttack(owner,castLife,dmg,
             owner.position().x,owner.position().y,velX,velY,(int)(owner.size() + 8),Color.GRAY);
         
         attacks.add(bA);
@@ -46,6 +48,11 @@ public class StunSkill extends CircleSkill {
             (int)8, (int)8);
         graphics.setColor(Color.BLACK);
         graphics.drawLine(x+(int)size/2, y-(int)size/2, x-(int)size/2, y+(int)size/2);
+    }
+    @Override
+    public void addBonus(CircleEntity circle) {
+        circle.minMagicDamage(1);
+        circle.maxMagicDamage(this.skillLevel);
     }
     
 }

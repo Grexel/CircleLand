@@ -32,7 +32,7 @@ public class SummonedSkeleton extends CircleSummoned{
     public static final int BASE_ATTACK_DEFENSE= 2;
     public static final int BASE_MAGIC_DEFENSE= 1;
     public static final int BASE_PRECISION = 1;
-    public static final int BASE_ATTACKSPEED= 1000;
+    public static final int BASE_ATTACKSPEED = -2; // 0 for weapon attackspeed, negative for longer attacks
     public static final int BASE_CASTSPEED= 1000;
     public static final int BASE_MOVESPEED= 80;
         
@@ -57,7 +57,7 @@ public class SummonedSkeleton extends CircleSummoned{
         level = 1;
         baseMaxHealth = baseMaxHealth * level;
         health = maxHealth;
-        baseAttackSpeed = 0;
+        baseAttackSpeed = BASE_ATTACKSPEED;
         baseCastSpeed = 0;
         baseMoveSpeed = BASE_MOVESPEED  + level * 10;
         baseAttackDamage = BASE_ATTACK_DAMAGE + level * 20;
@@ -88,7 +88,7 @@ public class SummonedSkeleton extends CircleSummoned{
         level = 7;
         baseMaxHealth = baseMaxHealth * level;
         health = maxHealth;
-        baseAttackSpeed = 0;
+        baseAttackSpeed = BASE_ATTACKSPEED;
         baseCastSpeed = 0;
         baseMoveSpeed = BASE_MOVESPEED  + level * 10;
         baseAttackDamage = BASE_ATTACK_DAMAGE + level * 20;

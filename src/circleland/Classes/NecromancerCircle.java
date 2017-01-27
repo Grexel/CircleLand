@@ -10,6 +10,8 @@ import circleland.CircleClass;
 import circleland.CircleEntity;
 import circleland.CircleMap;
 import circleland.CircleSkill;
+import circleland.CircleWeapon;
+import circleland.Loot.LootGenerator;
 import circleland.Weapons.BiteWeapon;
 import circleland.Weapons.BulletWeapon;
 import java.awt.Color;
@@ -27,6 +29,12 @@ public class NecromancerCircle extends CircleClass{
         super("Necromancer");
         color = Color.BLACK;
         outlineColor = Color.GRAY;
+        baseStrength = 5;
+        baseDexterity = 5;
+        baseMagic = 10;
+        baseFortitude = 10;
+        statPoints = 500;
+        
         addAllSkills();
         equippedSkill = new SummonSkeletonSkill();
         skills.add(new SummonGolemSkill());
@@ -38,9 +46,18 @@ public class NecromancerCircle extends CircleClass{
         skills.add(new LeechLifeCurseSkill());
         skills.add(new ThornsCurseSkill());
         
-        equippedWeapon = new BulletWeapon();
+        LootGenerator lG = new LootGenerator();
+        equippedWeapon = (CircleWeapon)lG.getItem("Mouse Jaw");
     }
     public void addAllSkills(){
         allSkills.add(new SummonSkeletonSkill());
+        allSkills.add(new SummonGolemSkill());
+        allSkills.add(new SummonSkeletonArcherSkill());
+        allSkills.add(new BoneShieldSkill());
+        allSkills.add(new BoneBlastSkill());
+        allSkills.add(new BoneWallSkill());
+        allSkills.add(new WeakenCurseSkill());
+        allSkills.add(new LeechLifeCurseSkill());
+        allSkills.add(new ThornsCurseSkill());
     }
 }
