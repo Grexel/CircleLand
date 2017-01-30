@@ -34,6 +34,7 @@ public class GameStateManager {
     }
     public void changeState(GameState gS){
         if(gameStateStack.size() > 0){
+            gameStateStack.get(gameStateStack.size()-1).close();
             gameStateStack.remove(gameStateStack.size()-1);
         }
         gameStateStack.add(gS);
@@ -42,13 +43,18 @@ public class GameStateManager {
         gameStateStack.add(gS);
     }
     public void popState(){
-        if(gameStateStack.size() > 0)
+        if(gameStateStack.size() > 0){
+            gameStateStack.get(gameStateStack.size()-1).close();
             gameStateStack.remove(gameStateStack.size()-1);
+        }
     }
     public boolean isRunning(){
         return gameStateStack.size() > 0;
     }
     public void quit(){
+        for(GameState g : gameStateStack){
+            g.close();
+        }
         gameStateStack.clear();
     }
 }

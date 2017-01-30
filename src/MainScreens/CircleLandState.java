@@ -6,6 +6,7 @@
 package MainScreens;
 
 import circleland.CircleClass;
+import circleland.CircleLoader;
 import circleland.CircleMap;
 import circleland.CircleMouse;
 import circleland.CircleSummoned;
@@ -167,7 +168,6 @@ public class CircleLandState extends GameState{
 
     @Override
     public void close() {
-        
+        CircleLoader.saveCharacter(player);
     }
-    
 }

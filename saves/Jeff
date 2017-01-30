@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<character>
+<name>Jeff</name>
+<class>Warrior</class>
+<stats>
+<level>2</level>
+<experience>168</experience>
+<nextLevelExperience>350</nextLevelExperience>
+<gold>0</gold>
+<statPoints>5</statPoints>
+<skillPoints>1</skillPoints>
+<baseMagicFind>0.0101</baseMagicFind>
+<baseMaxHealth>110.0</baseMaxHealth>
+<baseHealthRegeneration>14.8</baseHealthRegeneration>
+<baseMaxMana>140.0</baseMaxMana>
+<baseManaRegeneration>14.0</baseManaRegeneration>
+<baseStrength>15</baseStrength>
+<baseDexterity>5</baseDexterity>
+<baseMagic>5</baseMagic>
+<baseFortitude>10</baseFortitude>
+<baseManaRegeneration>14.0</baseManaRegeneration>
+<baseMoveSpeed>202.0</baseMoveSpeed>
+<baseAttackSpeed>0.0</baseAttackSpeed>
+<baseCastSpeed>0.0</baseCastSpeed>
+<basePrecision>12</basePrecision>
+</stats>
+</character>
