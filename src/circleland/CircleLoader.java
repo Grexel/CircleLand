@@ -24,7 +24,7 @@ import org.w3c.dom.NodeList;
 public class CircleLoader {
     public static final String savePath = "saves/";
     /**
-    *   Design patter for player save/load
+    *   Design pattern for player save/load
     * <name>theLegend27</name>
     * <class>Warrior</class>
     * <skills>
@@ -257,6 +257,17 @@ public class CircleLoader {
                         .item(0).getTextContent());
             circle.baseCastSpeed(baseCastSpeed);
         
+    }
+    public static void loadItems(CircleClass circle, Element elem){
+        NodeList objects = elem.getElementsByTagName("item");
+        for(int j = 0; j < objects.getLength(); j++)
+        {
+            Element e = (Element)objects.item(j);
+            String type = e.getAttribute("type");
+            String name = e.getAttribute("name");
+            double xPos = Double.parseDouble(e.getAttribute("x"));
+            double yPos = Double.parseDouble(e.getAttribute("y"));
+        }
     }
     public static CircleClass loadClass(String className){
             if(className.equalsIgnoreCase("Warrior")){
