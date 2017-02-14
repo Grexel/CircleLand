@@ -109,7 +109,19 @@ public class CircleLoader {
             
             writer.append("<name>" + circle.name() + "</name>"); writer.newLine();
             writer.append("<class>" + circle.className() + "</class>"); writer.newLine();
-            
+            //save stats
+            saveStats(writer, circle);
+            //save equipment
+            saveItems(writer,circle);
+            writer.append("</character>"); writer.newLine();
+            writer.flush();
+            writer.close();
+        }catch(Exception e){
+            e.printStackTrace(System.err);
+        }
+    }
+    public static void saveStats(BufferedWriter writer, CircleClass circle){
+        try{
             writer.append("<stats>"); writer.newLine();
             writer.append("<level>" + circle.level() + "</level>"); writer.newLine();
             writer.append("<experience>" + circle.experience()+ "</experience>"); writer.newLine();
@@ -132,10 +144,19 @@ public class CircleLoader {
             writer.append("<baseCastSpeed>" + circle.baseCastSpeed() + "</baseCastSpeed>"); writer.newLine();
             writer.append("<basePrecision>" + circle.basePrecision() + "</basePrecision>"); writer.newLine();
             writer.append("</stats>"); writer.newLine();
-            writer.append("</character>"); writer.newLine();
-            writer.flush();
-            writer.close();
         }catch(Exception e){
+            System.out.println("Error writing stats");
+            e.printStackTrace(System.err);
+        }
+        
+    }
+    public static void saveItems(BufferedWriter writer, CircleClass circle){
+        try{
+            writer.append("<items>"); writer.newLine();
+            
+            writer.append("</items>"); writer.newLine();
+        }catch(Exception e){
+            System.out.println("Error writing stats");
             e.printStackTrace(System.err);
         }
     }
@@ -170,6 +191,9 @@ public class CircleLoader {
                     }
                     if(elem.getTagName().equalsIgnoreCase("stats")){
                         loadStats(player, elem);
+                    }
+                    if(elem.getTagName().equalsIgnoreCase("items")){
+                        loadItems(player, elem);
                     }
                 }
             }
