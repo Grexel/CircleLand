@@ -59,6 +59,8 @@ public class CircleLandState extends GameState{
         
         
         player = circle;
+        player.position().x = 0;
+        player.position().y = 0;
         camera = new Camera(0,0,PANEL_WIDTH,PANEL_HEIGHT, player);
         mouse = new CircleMouse(camera,player);
         camera.mouse(mouse);

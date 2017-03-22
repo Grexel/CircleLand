@@ -22,7 +22,6 @@ import java.util.Iterator;
  */
 public class CircleEntity extends CircleObject{
     //Properties
-    protected Point2D.Double velocity,aim;
     protected int headRadius,headSize;
     protected int team;
     protected Color outlineColor = Color.BLACK;
@@ -91,7 +90,7 @@ public class CircleEntity extends CircleObject{
         position = new Point2D.Double(0,0);
         velocity = new Point2D.Double(0,0);
         aim = new Point2D.Double(0,0);
-        size = 25;
+        size = 30;
         headRadius = (int)size/2;
         headSize = (int)size/2;
         color = Color.BLUE;
@@ -370,11 +369,11 @@ public class CircleEntity extends CircleObject{
     {
         //draw Circle body
         graphics.setColor(outlineColor);
-        graphics.fillOval((int)(position.x - (size+6)/ 2), (int)(position.y - (size+6) / 2),
-            (int)size+6, (int)size+6);
-        graphics.setColor(color);
-        graphics.fillOval((int)(position.x - size / 2), (int)(position.y - size / 2),
+        graphics.fillOval((int)(position.x - (size)/ 2), (int)(position.y - (size) / 2),
             (int)size, (int)size);
+        graphics.setColor(color);
+        graphics.fillOval((int)(position.x - (size - 6) / 2), (int)(position.y - (size - 6)/ 2),
+            (int)(size - 6), (int)(size - 6));
         
     }
     public void drawHead(Graphics2D graphics){
@@ -533,8 +532,6 @@ public class CircleEntity extends CircleObject{
     //GETTER AND SETTER METHODS
     
     //ACTION VARIABLES
-    public void aim(Point2D.Double point){aim = point;}
-    public Point2D.Double aim(){ return aim;}
     public void moveLeft(boolean m){moveLeft = m;}
     public boolean moveLeft(){ return moveLeft;}
     public void moveUp(boolean m){moveUp = m;}
